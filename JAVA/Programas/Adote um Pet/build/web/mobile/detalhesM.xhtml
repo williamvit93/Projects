@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+
+    <h:head>
+        <link rel="stylesheet" href="../Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/main.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+
+    <h:body styleClass="body">
+        <pm:page>
+
+            <ui:insert name="header">
+                <ui:include src="/template/mobilesuperior.xhtml"/>
+            </ui:insert>
+
+            <pm:content>
+
+
+                <table id="customers">
+                    <tr>
+                        <th>Aplicação dos Recursos</th>
+                        <th>Custo</th>
+
+                    </tr>
+                    <tr>
+                        <td>Administração</td>
+                        <td>R$ 130.000,00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Imposto de Renda</td>
+                        <td></td>
+
+                    </tr>
+                    <tr>
+                        <td>Medicamentos</td>
+                        <td>R$ 112.342,00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Transporte</td>
+                        <td>R$ 4.035,00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Alimentação</td>
+                        <td>R$ 18.420,00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Higiene</td>
+                        <td>R$ 11.000,00</td>
+
+                    </tr>
+
+                </table>       
+                <p:separator></p:separator>
+
+                <table id="customers">
+                    <tr>
+                        <th>Origem dos Recursos</th>
+                        <th>Valor</th>
+
+                    </tr>
+                    <tr>
+                        <td>Doações Privadas</td>
+                        <td>R$ 138.000,00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Doações Governamentais</td>
+                        <td>R$ 95.000,00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Produtos</td>
+                        <td>R$ 79.000,00</td>
+
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>R$ 312.000,00</td>
+
+                    </tr>
+
+                </table>
+
+                <p:separator></p:separator>
+                <table id="customers">
+                    <tr>
+                        <th>Localização dos Projetos</th>
+                        <th>Nº de Programas</th>
+
+                    </tr>
+                    <tr>
+                        <td>Região Sul de SP</td>
+                        <td>16</td>
+
+                    </tr>
+                    <tr>
+                        <td>Região Norte de SP</td>
+                        <td>10</td>
+
+                    </tr>
+                    <tr>
+                        <td>Centro de SP</td>
+                        <td>29</td>
+
+                    </tr>
+                    <tr>
+                        <td>Região Leste de SP</td>
+                        <td>18</td>
+
+                    </tr>
+                    <tr>
+                        <td>Região Oeste de SP</td>
+                        <td>16</td>
+
+                    </tr>
+
+                </table>
+                <p:separator></p:separator>
+
+                <table id="customers">
+                    <tr>
+                        <th>Atividade</th>
+                        <th>Total</th>
+
+                    </tr>
+                    <tr>
+                        <td>Consultas Ambulatoriais</td>
+                        <td>115</td>
+
+                    </tr>
+                    <tr>
+                        <td>Internações</td>
+                        <td>23</td>
+
+                    </tr>
+                    <tr>
+                        <td>Casos de Desnutrição</td>
+                        <td>105</td>
+
+                    </tr>
+                    <tr>
+                        <td>Intervenções Cirurgicas</td>
+                        <td>11</td>
+
+                    </tr>
+                    <tr>
+                        <td>Animais em Tratamento</td>
+                        <td>157</td>
+
+                    </tr>
+                    <tr>
+                        <td>Resgates</td>
+                        <td>215</td>
+
+                    </tr>
+                    <tr>
+                        <td>Adoções</td>
+                        <td>44</td>
+
+                    </tr>
+                    <tr>
+                        <td>Animais Vacinados</td>
+                        <td>250</td>
+
+                    </tr>
+
+                </table>
+
+            </pm:content>
+            <ui:insert name="header">
+                <ui:include src="/template/mobileinferior.xhtml"/>
+            </ui:insert>
+        </pm:page> 
+
+
+    </h:body>
+
+</html>

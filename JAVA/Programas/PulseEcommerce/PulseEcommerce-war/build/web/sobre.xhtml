@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center" resizable="true" styleClass="centerUnit">
+                sobre a empresa
+            </p:layoutUnit>
+
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menuesquerdo.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/rodape.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+        </p:layout>
+
+    </h:body>
+</html>
+

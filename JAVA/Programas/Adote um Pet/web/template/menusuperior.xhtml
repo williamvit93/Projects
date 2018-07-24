@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:composition>
+            <p:layoutUnit position="north">
+                <h:graphicImage url="Resources/imagens/CAPA1.png" class="image" width="100%"/>
+                <h:form>
+
+                    <p:menubar>
+                        <p:menuitem value="INÍCIO" icon="ui-icon-home" url="index.xhtml" style="background-color:#cccccc ; border: solid; border-radius: 10pt; text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;"/>
+                        <p:menuitem value="FAÇA SUA DOAÇÃO" url="doacao.xhtml" action="#{clienteBean.cadastrarNovo}" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem value="PAINEL DA TRANSPARÊNCIA" url="paineltransparencia.xhtml" action="#{clienteBean.cadastrarNovo}" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem value="ADOTAR" url="/adotar.xhtml" action="#{clienteBean.cadastrarNovo}" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem value="ANUNCIAR" url="anunciar.xhtml" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem value="QUEM SOMOS" url="quemsomos.xhtml" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <f:facet name="options">
+                            <p:button value="VERSÃO MOBILE" outcome="mobile/indexM"></p:button>
+                        </f:facet>
+
+                    </p:menubar>
+                </h:form>
+            </p:layoutUnit>
+
+        </ui:composition>
+    </h:body>
+</html>

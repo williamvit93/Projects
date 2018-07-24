@@ -1,0 +1,178 @@
+/* Remove the navbar's default rounded borders and increase the bottom margin */ 
+body{
+    font-family: Comic Sans MS;
+    font-size: 12px;
+}
+.body{
+    background-color:#1E86A6;
+}
+.toolbar{
+    background-color: #000;
+
+
+}
+.menubar{
+    background-color: #ffffff;
+}
+.ui-layout-unit{
+    border-color: black;
+    border-style: ridge;
+}
+p,ul{
+
+    text-align: justify;
+    text-indent: 30px;
+    color: black;
+}
+div{
+    text-align: left;
+}
+.mySlides 
+{
+    display:none;
+
+}
+
+.navbar {
+    margin-bottom: 50px;
+    border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */ 
+.jumbotron {
+    margin-bottom: 0;
+    background-image: url("imagens/background-top.jpg");
+    text-shadow: 5px 5px 5px black;
+    color: white;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #F2F2F2;
+    padding: 25px;
+    position:absolute;
+    bottom:0; 
+    width:100%;
+}
+.msg{
+    text-shadow: 5px 5px 5px black;
+    color: white;
+}
+h5{
+    font-size:100px;
+}
+h6{
+    font-size:80px;
+}
+/* */
+.ui-layout-unit-header, .ui-menubar{
+    background-color:#1E86A6;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Comic Sans MS;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+
+.ui-panelmenu-header, .ui-menuitem, .ui-panelmenu-content {
+
+    font-family: Arial;
+}
+/*sobreposição menu */
+.ui-layout-north {
+    z-index:20 !important;
+    overflow:visible !important;;
+    border: none;
+}
+.ui-layout-north .ui-layout-unit-content {
+    overflow:visible !important;
+}
+
+.ui-layout-west {
+    z-index:20 !important;
+    overflow:visible !important;;
+
+}
+.txtgrande{
+    margin: 40px 40px 40px 40px;
+    font-size: 18pt;
+}
+/*estilo do bloco west */
+.westUnit {
+    height: 30% !important;
+    border: none;
+
+}
+.footerSouth{
+
+    font-family: Comic Sans MS;
+
+}
+.image{
+    border-radius: 10px;
+    border-bottom-style: solid;
+    border-color: #000;
+}
+
+.link{
+    font-size: 10pt;
+    color: white;
+}
+.ui-icon-home{
+    color: white;
+    background-color: white;
+    border-color: white;
+
+}
+.ui-widget-header{
+    color: #ffffff;
+    font-size: 18px;
+    font-family: Comic Sans MS;
+    text-shadow: black 0.1em 0.1em 0.2em;
+    text-align: center;
+}
+.img{
+    border-radius: 20px;
+    border-color: #000;
+    width: 100%;
+
+}
+.imgCarrousel{
+    border-radius: 20px;
+    border-color: #000;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+
+}
+
+.formcadastro{
+    background-color: #1E86A6;
+    color: white; 
+    border: white;
+    border-width: 10pt;
+    border-style: solid;
+}
+.ui-panel-titlebar{
+    background-color: #1E86A6;
+}
+.ui-dialog-titlebar{
+    background-color: #1E86A6;
+}
+.loginform{
+    color: black;
+    font-size: 10px;
+    font-family: Arial;
+    text-shadow: black 0em 0em 0em;
+    text-align: center;
+}
+.contatoform{
+
+    color: white; 
+    width: 400pt;
+    height: 600pt;
+    position: absolute;
+    left: 35%;
+    right: 50%;
+    top: 10%;
+}

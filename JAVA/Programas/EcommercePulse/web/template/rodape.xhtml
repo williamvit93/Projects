@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:composition>
+            <p:layoutUnit position="south" size="7%" styleClass="footerSouth">
+
+                <h:form onsubmit="mailto:williamvit93@gmail.com">
+
+                    <center>
+
+                        <div  class="text-center">
+                            <p:panel style="position: absolute;left: 35%">
+                                Receba Nossas Ofertas: <p:inputText type="email"  size="50" placeholder="Email" required="true" requiredMessage="O campo 'EMAIL' é obrigatório"/>
+                                <separator/>
+
+                                <h:commandButton styleClass="btn btn-success" value="Assinar" action="#{clienteBean.showMessageNews}" actionListener="#{clienteBean.showMessageNews}" />
+
+                            </p:panel>
+                        </div>
+                    </center>
+
+                </h:form>
+
+            </p:layoutUnit>
+
+        </ui:composition>
+    </h:body>
+</html>

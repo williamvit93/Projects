@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F08EBC60-A817-433E-A0EC-19DE947E2D13}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GestaoVendas</RootNamespace>
+    <AssemblyName>GestaoVendas</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Entity.Design.Extensibility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Entity.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CadastrarCampanha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarCampanha.Designer.cs">
+      <DependentUpon>CadastrarCampanha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarCliente.Designer.cs">
+      <DependentUpon>CadastrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastrarVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarVenda.Designer.cs">
+      <DependentUpon>CadastrarVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Campanha.cs" />
+    <Compile Include="Clientes.cs" />
+    <Compile Include="Connected Services\ServicoCep\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Enderecos.cs" />
+    <Compile Include="Gestao.cs" />
+    <Compile Include="GestaoVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoVenda.Designer.cs">
+      <DependentUpon>GestaoVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Migrations\201803290118524_new.cs" />
+    <Compile Include="Migrations\201803290118524_new.Designer.cs">
+      <DependentUpon>201803290118524_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803290703369_codigoProd.cs" />
+    <Compile Include="Migrations\201803290703369_codigoProd.Designer.cs">
+      <DependentUpon>201803290703369_codigoProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803302017305_Unidade.cs" />
+    <Compile Include="Migrations\201803302017305_Unidade.Designer.cs">
+      <DependentUpon>201803302017305_Unidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803310352429_VendaUnidade.cs" />
+    <Compile Include="Migrations\201803310352429_VendaUnidade.Designer.cs">
+      <DependentUpon>201803310352429_VendaUnidade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803310435052_VendaUnidade2.cs" />
+    <Compile Include="Migrations\201803310435052_VendaUnidade2.Designer.cs">
+      <DependentUpon>201803310435052_VendaUnidade2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803310446143_VendaUnidadeChaves.cs" />
+    <Compile Include="Migrations\201803310446143_VendaUnidadeChaves.Designer.cs">
+      <DependentUpon>201803310446143_VendaUnidadeChaves.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803310553389_Campanha.cs" />
+    <Compile Include="Migrations\201803310553389_Campanha.Designer.cs">
+      <DependentUpon>201803310553389_Campanha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803310606031_CampanhaTipos.cs" />
+    <Compile Include="Migrations\201803310606031_CampanhaTipos.Designer.cs">
+      <DependentUpon>201803310606031_CampanhaTipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarRecebimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarRecebimento.Designer.cs">
+      <DependentUpon>RegistrarRecebimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tipos.cs" />
+    <Compile Include="Unidades.cs" />
+    <Compile Include="VendaProdutos.cs" />
+    <Compile Include="VerRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerRelatorios.Designer.cs">
+      <DependentUpon>VerRelatorios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CadastrarCampanha.resx">
+      <DependentUpon>CadastrarCampanha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarCliente.resx">
+      <DependentUpon>CadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarVenda.resx">
+      <DependentUpon>CadastrarVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoVenda.resx">
+      <DependentUpon>GestaoVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290118524_new.resx">
+      <DependentUpon>201803290118524_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803290703369_codigoProd.resx">
+      <DependentUpon>201803290703369_codigoProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803302017305_Unidade.resx">
+      <DependentUpon>201803302017305_Unidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803310352429_VendaUnidade.resx">
+      <DependentUpon>201803310352429_VendaUnidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803310435052_VendaUnidade2.resx">
+      <DependentUpon>201803310435052_VendaUnidade2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803310446143_VendaUnidadeChaves.resx">
+      <DependentUpon>201803310446143_VendaUnidadeChaves.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803310553389_Campanha.resx">
+      <DependentUpon>201803310553389_Campanha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803310606031_CampanhaTipos.resx">
+      <DependentUpon>201803310606031_CampanhaTipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarRecebimento.resx">
+      <DependentUpon>RegistrarRecebimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerRelatorios.resx">
+      <DependentUpon>VerRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServicoCep\AtendeClienteService.wsdl" />
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.atualizaPagamentoNaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.atualizaRemessaAgrupadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.buscaServicosAdicionaisAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.buscaServicosValorDeclaradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.buscaServicosXServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.buscaTarifaValeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.calculaTarifaServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.consultaSROResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoVendas.ServicoCep.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicoCep\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServicoCep\configuration.svcinfo" />
+    <None Include="Connected Services\ServicoCep\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicoCep\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

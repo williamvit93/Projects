@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+
+    <h:head>
+        <link rel="stylesheet" href="../Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/main.css"/>
+        <link rel="stylesheet" href="../Resources/css/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+
+    <h:body styleClass="body">
+        <pm:page>
+
+            <ui:insert name="header">
+                <ui:include src="/template/mobilesuperior.xhtml"/>
+            </ui:insert>
+
+            <pm:content>
+
+                <pm:header style="background-color:#51D3D6;color: #ffffff;
+                           font-family: Comic Sans MS;
+                           text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="MAIS INFORMAÇÕES"></pm:header>
+                <h:form>
+                    <table><tr><td>
+                                <b:carousel id="PET1" >
+                                    <b:carouselItem >
+                                        <img src="../Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="../Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="../Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="../Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="../Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="../Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img" />
+
+                                    </b:carouselItem>
+                                </b:carousel> 
+                            </td>
+                            <td>
+
+                                <p:panelGrid  style="margin-left: 30px; width: 300px;" >
+
+                                    <table id="customers">
+
+                                        <tr>
+                                            <th>Raça</th>
+                                            <td>Indefinido</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>Tamanho</th>
+                                            <td>Médio</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>Data de Entrada</th>
+                                            <td>05/08/2017</td>
+
+                                        </tr>
+                                        
+                                        <tr>
+                                            <th>Encontrado</th>
+                                            <td>São Paulo</td>
+
+                                        </tr>
+                                        <tr>
+                                            <th>Detalhes</th>
+                                            <td><p>Macho adulto, se dá muito bem com crianças e 
+                                                    outros cães. Só não com gatos.</p></td>
+
+                                        </tr>
+
+
+                                    </table>       
+
+
+
+
+                                </p:panelGrid>
+                            </td>
+
+
+                        </tr>
+
+                    </table>
+
+                </h:form>
+
+                <p:separator></p:separator>
+
+                <pm:header style="background-color:#51D3D6;color: #ffffff;
+                           font-family: Comic Sans MS;
+                           text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title=" QUERO ADOTAR"></pm:header>
+                <div style="background-color: #51D3D6;">
+
+                    <h:form acceptcharset="ISO-8859-1" style="color: white; border: #51D3D6; border-width: 20pt; border-style: solid;">                       
+
+                        <div class="row">
+                            <div class="col-xs-10 col-md-10">
+                                <p:outputLabel for="nome" value="Nome:" />
+                                <h:inputText styleClass=" form-control" id="nome" value="#{clienteBean.cliente.nome}" title="Nome" required="true" />
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xs-8 col-md-8">
+                                <p:outputLabel for="email" value="Email:" />
+                                <h:inputText  styleClass=" form-control" id="email" value="#{clienteBean.cliente.email}" title="E-mail" required="true"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-md-8">
+                                <h:outputLabel  value="Telefone: " for="telefone"  />
+                                <h:inputText class=" form-control" id="telefone" value="#{clienteBean.cliente.telefone}" title="Telefone" required="true"/>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-md-8">
+                                <p:outputLabel for="" value="Comentários:" />
+                                <p:inputTextarea rows="9" cols="60" />
+                            </div>                           
+                        </div>
+
+                        <br/>
+
+                        <div>
+                            <h:commandButton styleClass="btn btn-success" value="Enviar" action="#{clienteBean.salva}"/>
+                        </div>
+
+                    </h:form>
+                </div>
+
+                <p:separator></p:separator>
+
+                <pm:header style="background-color:#51D3D6;color: #ffffff;
+                           font-family: Comic Sans MS;
+                           text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="AVALIAÇÃO DE ADOÇÃO"></pm:header>
+                <p:graphicImage url="../Resources/imagens/avaliacao.jpg" width="100%"  />
+
+                <div class="texto-lateral" >Se tiver interesse em adotar um de nossos
+                    bichinhos, preencha seus dados que entraremos em contato para 
+                    uma breve avaliação.</div>
+
+            </pm:content>
+            <ui:insert name="header">
+                <ui:include src="/template/mobileinferior.xhtml"/>
+            </ui:insert>
+        </pm:page> 
+
+
+    </h:body>
+
+</html>

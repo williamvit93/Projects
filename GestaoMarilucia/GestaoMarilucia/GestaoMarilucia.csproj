@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GestaoMarilucia</RootNamespace>
+    <AssemblyName>GestaoMarilucia</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CadastrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarCliente.Designer.cs">
+      <DependentUpon>CadastrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadastrarVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastrarVenda.Designer.cs">
+      <DependentUpon>CadastrarVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Connected Services\ServicoCep\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Endereco.cs" />
+    <Compile Include="GestaoContext.cs" />
+    <Compile Include="GestaoVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestaoVendas.Designer.cs">
+      <DependentUpon>GestaoVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="RegistrarRecebimento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarRecebimento.Designer.cs">
+      <DependentUpon>RegistrarRecebimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VendaProduto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tipo.cs" />
+    <Compile Include="VerRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerRelatorios.Designer.cs">
+      <DependentUpon>VerRelatorios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CadastrarCliente.resx">
+      <DependentUpon>CadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastrarVenda.resx">
+      <DependentUpon>CadastrarVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestaoVendas.resx">
+      <DependentUpon>GestaoVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegistrarRecebimento.resx">
+      <DependentUpon>RegistrarRecebimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerRelatorios.resx">
+      <DependentUpon>VerRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\ServicoCep\AtendeClienteService.wsdl" />
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.atualizaPagamentoNaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.atualizaRemessaAgrupadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.bloquearObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.buscaClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.buscaContratoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.buscaPagamentoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.buscaServicosAdicionaisAtivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.buscaServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.buscaServicosValorDeclaradoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.buscaServicosXServicosAdicionaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.buscaTarifaValeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.calculaTarifaServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.cancelarObjetoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.cancelarPedidoScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.clienteERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.consultaCEPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.consultaSROResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.contratoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.embalagemLRSMaster.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.enderecoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.fechaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.fechaPlpVariosServicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.geraDigitoVerificadorEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.getStatusCartaoPostagemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.getStatusPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.integrarUsuarioScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.obterClienteAtualizacaoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.obterEmbalagemLRSResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.retornoCancelamento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.servicoAdicionalXML.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.servicoERP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.solicitaEtiquetasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.solicitaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.solicitarPostagemScolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.solicitaXmlPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.statusCartao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.statusPlp.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.valePostal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.validaEtiquetaPLPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.validaPlpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.validarPostagemReversaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.validarPostagemSimultaneaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.verificaDisponibilidadeServicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServicoCep\GestaoMarilucia.ServicoCep.VerificaSeTodosObjetosCanceladosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicoCep\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicoCep\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicoCep\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServicoCep\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.1.1.1\lib\net451\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.SqlServer.1.0.0\lib\net451\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.XMLSrc, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.DataDesign.DataSetDesigner, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Core.Presentation" />
+    <Reference Include="System.Activities.DurableInstancing" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.AddIn" />
+    <Reference Include="System.AddIn.Contract" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.Composition.registration" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <add key="CaminhoChaveUnica" value="C:\Sistemas\AuditoriaNFe\AuditoriaNFeJob\chaves.txt" />
+    <add key="CaminhoNFE" value="C:\NFEManagement\nfe"/>
+    <add key="CaminhoCTE" value="C:\NFEManagement\cte"/>
+    <add key="CaminhoCTEFatura" value="C:\NFEManagement\CTEFatura" />
+  </appSettings>
+</configuration>

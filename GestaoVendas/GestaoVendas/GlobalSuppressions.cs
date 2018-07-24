@@ -1,0 +1,26 @@
+﻿
+// This file is used by Code Analysis to maintain SuppressMessage 
+// attributes that are applied to this project.
+// Project-level suppressions either have no target or are given 
+// a specific target and scoped to a namespace, type, member, etc.
+
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarCliente.btnBuscaCep_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarCliente.txtBairro_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarCliente.txtCep_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarCliente.txtCidade_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarCliente.txtNome_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarCliente.txtNum_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarCliente.txtRua_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.GestaoVenda.btnCadCliente_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.GestaoVenda.btnCadVenda_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.GestaoVenda.btnReceber_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.GestaoVenda.btnRelatorios_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarCliente.btnCadastrar_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarVenda.btnRegVenda_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarVenda.txtCodigo_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarVenda.txtPrecoUnit_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarVenda.txtPrecoUnit_TextChanged(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarVenda.txtProduto_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.CadastrarVenda.txtQtd_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.VerRelatorios.btnClien_Click(System.Object,System.EventArgs)")]
+[assembly: System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "<Pending>", Scope = "member", Target = "~M:GestaoVendas.VerRelatorios.btnVendas_Click(System.Object,System.EventArgs)")]

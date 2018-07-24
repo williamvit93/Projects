@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:composition id="user">
+            <p:layoutUnit position="north">
+                <h:graphicImage url="/faces/Resources/imagens/CAPA-Pulse.png" class="image" width="100%"/>
+                <h:form>
+
+                    <p:menubar>
+                        <p:menuitem value="Início" icon="ui-icon-home" url="/faces/index.xhtml" style="background-color:#cccccc ; border: solid; border-radius: 10pt; text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;"/>
+                        <p:menuitem value="Nossos Produtos" url="/faces/produtos.xhtml" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem value="Cadastre-se" url="/faces/cadastro.xhtml" action="#{clienteBean.cadastrarNovo}" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem value="Contato" url="/faces/contato.xhtml" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem disabled="#{clienteBean.ask}" value="Minha Conta" url="/faces/minhaconta.xhtml" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem value="Sobre a empresa" url="/faces/sobre.xhtml" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+
+                        <f:facet name="options">
+                            <p:commandButton value="Login" onclick="PF('dlg').show();" icon="ui-icon-bookmark" title="login" disabled="#{!clienteBean.ask}"/>
+                            <p:commandButton  value="Logout" onclick="return index.xhtml" icon="ui-icon-extlink" action="#{clienteBean.logout(event)}" disabled="#{clienteBean.ask}"/>
+                            &nbsp;
+                            <b:commandButton value="" action="carrinho?faces-redirect=true" ajax="true"  icon="shopping-cart" title="Meu Carrinho" look="success" disabled="#{clienteBean.carrinho}"/>
+                            <div style="position: absolute;left: 80%;">
+
+                                <h:form >
+
+
+
+
+                                    <p:growl id="growl" />
+
+                                    <p:dialog header="Login" widgetVar="dlg" resizable="true">
+                                        <p:panel style="border: none" styleClass="loginform">
+                                            <div class="row">
+                                                <h:outputText value="Usuario"/>
+                                            </div>
+                                            <p:inputText id="username" size="30" value="#{clienteBean.cliente.usuario}" required="true" label="username" requiredMessage="O campo Usuário é obrigatório"/>
+
+                                            <div class="row">
+                                                <h:outputText value="Senha"/>
+                                            </div>
+                                            <p:password id="password" size="30" value="#{clienteBean.cliente.senha}" label="senha" redisplay="true" required="true" requiredMessage="O campo Senha é obrigatório" />
+
+
+                                            <f:facet name="footer" >
+                                                <p:commandButton value="Entrar" onclick="return index.xhtml" action="#{clienteBean.login(event)}"/>
+                                                &nbsp;
+                                                <p:link value="Esqueci minha senha" outcome="esquecisenha" style="font-size: 12pt;"/>
+                                            </f:facet>
+                                            <p:messages/>
+                                        </p:panel>
+                                    </p:dialog>
+
+                                </h:form>
+                            </div>
+
+
+
+                        </f:facet>
+
+                    </p:menubar>
+                </h:form>
+            </p:layoutUnit>
+
+        </ui:composition>
+    </h:body>
+</html>

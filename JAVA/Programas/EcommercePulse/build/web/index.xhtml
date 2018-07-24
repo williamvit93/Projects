@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center" resizable="true" styleClass="centerUnit">
+                <h:form>
+                    <div style="text-align: center;">
+                        <b:carousel id="antesdepois" style="text-align: center; width:98%; height: 98%;">
+                            <b:carouselItem >
+                                <img src="Resources/imagens/inicio.png" alt="Valladolid" class="imgCarrousel"  />
+
+
+                            </b:carouselItem>
+                            <b:carouselItem>
+                                <img src="Resources/imagens/inicio1.jpg" alt="Valladolid"  class="imgCarrousel"/>
+
+                            </b:carouselItem>
+
+                            <b:carouselItem>
+                                <img src="Resources/imagens/inicio2.jpg" alt="Valladolid"  class="imgCarrousel"/>
+
+
+                            </b:carouselItem>
+                            <b:carouselItem>
+                                <img src="Resources/imagens/inicio3.jpg" alt="Valladolid"  class="imgCarrousel"/>
+
+                            </b:carouselItem>
+                            
+                            <b:carouselItem>
+                                <img src="Resources/imagens/inicio4.jpg" alt="Valladolid"  class="imgCarrousel"/>
+
+                            </b:carouselItem>
+
+                        </b:carousel>
+                    </div>
+                </h:form>
+            </p:layoutUnit>
+
+
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menuesquerdo.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/rodape.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+        </p:layout>
+
+    </h:body>
+</html>
+

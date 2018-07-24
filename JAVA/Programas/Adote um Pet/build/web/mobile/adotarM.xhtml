@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+
+    <h:head>
+        <link rel="stylesheet" href="../Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/main.css"/>
+        <link rel="stylesheet" href="../Resources/css/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+
+    <h:body styleClass="body">
+        <pm:page>
+
+            <ui:insert name="header">
+                <ui:include src="/template/mobilesuperior.xhtml"/>
+            </ui:insert>
+
+            <pm:content>
+
+                <pm:header style="background-color:#51D3D6;color: #ffffff;
+                           font-family: Comic Sans MS;
+                           text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="ADOÇÃO"></pm:header>
+                <p class="textos">Agradecemos seu interesse em adotar um pet sem dono. 
+                    Mas, se você tem interesse em adotar um dos nossos pets, 
+                    precisamos saber um pouco mais de você, pois do ponto de 
+                    vista do animal, ser abandonado pelo amigo é muito doloroso… 
+                    e eles já sofreram isso uma vez e não queremos que isso se repita. 
+                    Eles não merecem ser tratados com desprezo.
+                    Sendo assim, ao clicar em adotar você encontrará uma ficha de <b>Cadastro</b>. 
+                    Ela deverá ser totalmente preenchida. 
+                    Após análise, entraremos em contato com você.</p>
+
+                <br/>
+                <div style="background-color: yellow">
+                    <p><b>
+                            TODOS OS ANIMAIS SÃO CASTRADOS E VACINADOS. ALGUNS ANIMAIS ESTÃO EM 
+                            TRATAMENTO VETERINARIO
+                        </b></p>
+                </div>
+
+                <p:separator></p:separator>
+
+                <!-- Product grid -->
+                <div class="w3-row " style="background-color: #51D3D6">
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="../Resources/imagens/Adotar1.jpg" style="width:100%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="/mobile/pet1M" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="../Resources/imagens/Adotar2.jpg" style="width:100%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button  class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="../Resources/imagens/Adotar3.jpg" style="width:100%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button  class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Fêmea
+                            </div>
+                        </div>
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="../Resources/imagens/Adotar4.png" style="width:100%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button  class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="../Resources/imagens/Adotar5.jpg" style="width:100%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button  class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="../Resources/imagens/Adotar6.jpg" style="width:100%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button  class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                               Macho
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="../Resources/imagens/Adotar7.jpg" style="width:100%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button  class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                               Macho
+                            </div>
+                        </div>
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="../Resources/imagens/Adotar8.jpg" style="width:100%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button  class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                               Macho
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </pm:content>
+            <ui:insert name="header">
+                <ui:include src="/template/mobileinferior.xhtml"/>
+            </ui:insert>
+        </pm:page> 
+
+
+    </h:body>
+
+</html>

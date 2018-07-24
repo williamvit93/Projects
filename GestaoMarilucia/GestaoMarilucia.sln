@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoMarilucia", "GestaoMarilucia\GestaoMarilucia.csproj", "{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}.Debug|x86.ActiveCfg = Debug|x86
+		{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}.Debug|x86.Build.0 = Debug|x86
+		{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}.Release|x86.ActiveCfg = Release|Any CPU
+		{FD21DC09-EBA9-4119-BDC6-3176923DE0AD}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD355F9C-4FE1-41CA-B103-7D872877E117}
+	EndGlobalSection
+EndGlobal

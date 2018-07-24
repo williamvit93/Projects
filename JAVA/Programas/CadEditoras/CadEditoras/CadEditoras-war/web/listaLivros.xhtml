@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./templates/template.xhtml">
+
+            <ui:define name="top">
+                <h1>Listagem dos livros cadastrados</h1>
+            </ui:define>
+
+            <ui:define name="content">
+                <f:view>
+                    <h:form>
+
+                        <h:dataTable value="#{livroBean.livros}" var="item" class="table table-hover">
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Id"/>
+                                </f:facet>
+                                <h:outputText value="#{item.id}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Titulo"/>
+                                </f:facet>
+                                <h:outputText value="#{item.titulo}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="ISBN"/>
+                                </f:facet>
+                                <h:outputText value="#{item.isbn}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Autor"/>
+                                </f:facet>
+                                <h:outputText value="#{item.nomeAutor}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Edição"/>
+                                </f:facet>
+                                <h:outputText value="#{item.edicao}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Editar"/>
+                                </f:facet>
+                                <h:commandLink action="cadastrarLivros">
+                                    <h:graphicImage library="imagens" name="editar.gif" alt="Editar" style="border: 0"></h:graphicImage>
+                                    <f:setPropertyActionListener target="#{livroBean.livro}" value="#{item}"></f:setPropertyActionListener>
+                                    <f:setPropertyActionListener target="#{livroBean.autor}" value="#{item.autorId}"></f:setPropertyActionListener>
+                                </h:commandLink>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputText value="Excluir"/>
+                                </f:facet>
+                                <h:commandLink action="#{livroBean.excluirLivro()}" >
+                                    <h:graphicImage library="imagens"  name="excluir.gif" alt="Excluir" style="border: 0"></h:graphicImage>
+                                    <f:setPropertyActionListener target="#{livroBean.livro}" value="#{item}"></f:setPropertyActionListener>
+                                </h:commandLink>
+                            </h:column>
+                        </h:dataTable>
+                        <h:commandLink class="btn btn-primary" action="index">
+                            <i class="glyphicon glyphicon-home"></i> Menu Principal
+                        </h:commandLink>
+                    </h:form>
+                </f:view>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

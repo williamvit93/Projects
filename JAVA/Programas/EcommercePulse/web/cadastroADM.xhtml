@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperiorADM.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center"  header="Cadastre-se" size="100%" resizable="true">
+
+                <h:form acceptcharset="ISO-8859-1" styleClass="formcadastro">                       
+                    <p:panel style="background-color: #1E86A6;">
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel for="nome" value="Nome:" style="color: white"/>
+                                <h:inputText styleClass="col-md-3 form-control" id="nome" value="#{clienteBean.cliente.nome}" title="Nome" required="true" requiredMessage="O campo 'NOME' é obrigatório"/>
+                            </div>
+                            <div class="col-xs-4 col-md-2">
+                                <h:outputLabel for="cpf" value="CPF:" style="color: white"/>
+                                <h:inputText  styleClass="col-md-3 form-control" id="cpf" value="#{clienteBean.cliente.cpf}" title="CPF" required="true" requiredMessage="O campo 'CPF' é obrigatório"/>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel for="email" value="Email:" style="color: white" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="email" value="#{clienteBean.cliente.email}" title="E-mail" required="true" requiredMessage="O campo 'EMAIL' é obrigatório"/>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel for="rua" value="Rua:" style="color: white"/>
+                                <h:inputText  styleClass="col-md-3 form-control" id="rua" value="#{clienteBean.cliente.rua}" title="Rua" required="true" requiredMessage="O campo 'RUA' é obrigatório"/>
+                            </div>
+
+                            <div class="col-xs-4 col-md-2">
+                                <h:outputLabel for="numero" value="Nº:" style="color: white"/>
+                                <h:inputText  styleClass="col-md-3 form-control" id="numero" value="#{clienteBean.cliente.numero}" title="Numero" required="true" requiredMessage="O campo 'Nº' é obrigatório"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel for="cidade" value="Cidade:" style="color: white"/>
+                                <h:inputText  styleClass="col-md-3 form-control" id="cidade" value="#{clienteBean.cliente.cidade}" title="Cidade" required="true" requiredMessage="O campo 'CIDADE' é obrigatório"/>
+                            </div>
+                            <div class="col-xs-1 col-md-1">
+                                <h:outputLabel for="uf" value="UF" style="color: white"/>
+                                <h:inputText  styleClass="col-md-1 form-control" id="uf" value="#{clienteBean.cliente.uf}" title="uf" required="true" requiredMessage="O campo 'UF' é obrigatório"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel for="pais" value="País:" style="color: white"/>
+                                <h:inputText  styleClass="col-md-3 form-control" id="pais" value="#{clienteBean.cliente.pais}" title="Pais" required="true" requiredMessage="O campo 'PAÍS' é obrigatório"/>
+                            </div>
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel for="cep" value="CEP:" style="color: white"/>
+                                <h:inputText  styleClass="col-md-3 form-control" id="cep" value="#{clienteBean.cliente.cep}" title="CEP" required="true" requiredMessage="O campo 'CEP' é obrigatório"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel  value="Telefone: " for="telefone" style="color: white"/>
+                                <h:inputText class="col-md-3 form-control" id="telefone" value="#{clienteBean.cliente.telefone}" title="Telefone" required="true" requiredMessage="O campo 'TELEFONE' é obrigatório"/>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel  value="Usuário: " for="usuario" style="color: white"/>
+                                <h:inputText class="col-md-3 form-control" id="usuario" value="#{clienteBean.cliente.usuario}" title="Usuario" required="true" requiredMessage="O campo 'USUÁRIO' é obrigatório"/>
+                            </div>     
+
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel  value="Senha: " for="senha" style="color: white"/>
+                                <p:password styleClass="col-md-3 form-control" id="senha" value="#{clienteBean.cliente.senha}" feedback="true" required="true" requiredMessage="O campo 'SENHA' é obrigatório"/>
+                            </div></div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel  value="Confirmar Senha: " for="confirmasenha" style="color: white"/>
+                                <p:password styleClass="col-md-3 form-control" id="confirmasenha"  value="#{clienteBean.cliente.confirmasenha}" title="Confirmar Senha" required="true" requiredMessage="O campo 'CONFIRMAÇÃO DE SENHA' é obrigatório"/>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <f:facet name="footer">
+                            <h:commandButton styleClass="btn btn-success" value="Cadastrar" action="#{clienteBean.salva}" actionListener="#{clienteBean.salva}" />
+                        </f:facet>
+
+
+                    </p:panel>
+                </h:form>
+            </p:layoutUnit>
+
+
+            <p:layoutUnit position="east" size="40%" header="Validação">
+
+                <h:messages style=" background-color: #1E86A6;" id="cadastro" class="alert alert-warning"/>
+            </p:layoutUnit>
+        </p:layout>
+
+    </h:body>
+</html>
+

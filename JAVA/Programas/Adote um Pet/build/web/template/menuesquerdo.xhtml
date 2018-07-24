@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:composition>
+            <p:layoutUnit position="west" size="200" styleClass="westUnit" resizable="true" header="Nossos Produtos" >
+                <h:form>
+                    <p:growl autoUpdate="true"/>
+
+                    <p:panelMenu style="width:180px">
+                        <p:submenu label="Categorias">
+                            <p:menuitem value="Proteínas" url="/faces/proteinas.xhtml" />
+                            <p:menuitem value="Aminoácidos" url="/faces/aminoacidos.xhtml"/>
+                            <p:menuitem value="Carboidratos" url="/faces/carboidratos.xhtml"/>
+                            <p:menuitem value="Fitoterápicos" url="/faces/fitoterapicos.xhtml"/>
+                            <p:menuitem value="Vegano" url="/faces/vegano.xhtml"/>
+                            <p:menuitem value="Vegetarianos" url="/faces/vegetarianos.xhtml"/>
+                            <p:menuitem value="Todos" url="/faces/todosprodutos.xhtml"/>
+                        </p:submenu>
+                        
+                    </p:panelMenu>
+                </h:form>
+            </p:layoutUnit>
+            
+        </ui:composition>
+    </h:body>
+</html>

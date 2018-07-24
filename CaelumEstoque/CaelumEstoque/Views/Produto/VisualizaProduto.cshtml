@@ -1,0 +1,41 @@
+﻿<title>Detalhes</title>
+<ul class="list-group-flush">
+
+    <li class="list-group-item">
+        <label class="text-warning text-uppercase">Id</label>
+        @ViewBag.Produto.Id
+    </li>
+    <li class="list-group-item">
+        <label class="text-warning text-uppercase">
+            Nome
+        </label>
+        @ViewBag.Produto.Nome
+    </li>
+    <li class="list-group-item">
+        <label class="text-warning text-uppercase">
+            Categoria
+        </label>
+
+        @ViewBag.Produto.Categoria.Nome
+    </li>
+    <li class="list-group-item">
+        <label class="text-warning text-uppercase">
+            Preço
+        </label>
+        @ViewBag.Produto.Preco
+    </li>
+    <li class="list-group-item">
+        <label class="text-warning text-uppercase">
+            Descrição
+        </label>
+        @ViewBag.Produto.Descricao
+    </li>
+    <li class="list-group-item">
+        <label class="text-warning text-uppercase">
+            Quantidade
+        </label>
+        @ViewBag.Produto.Quantidade
+    </li>
+</ul>
+
+@Html.RouteLink("Voltar", "ListaProdutos")

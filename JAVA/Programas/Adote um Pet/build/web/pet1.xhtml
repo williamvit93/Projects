@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <link rel="stylesheet" href="Resources/css/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <title>ADOTE UM PET</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header" >
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center" resizable="true" header="QUERO ADOTAR">
+
+                <div style="background-color: #51D3D6;">
+
+                    <h:form acceptcharset="ISO-8859-1" style="color: white; border: #51D3D6; border-width: 20pt; border-style: solid;">                       
+
+                        <div class="row">
+                            <div class="col-xs-10 col-md-10">
+                                <p:outputLabel for="nome" value="Nome:" />
+                                <h:inputText styleClass="col-md-3 form-control" id="nome" value="#{clienteBean.cliente.nome}" title="Nome" required="true" />
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xs-8 col-md-8">
+                                <p:outputLabel for="email" value="Email:" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="email" value="#{clienteBean.cliente.email}" title="E-mail" required="true"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-md-8">
+                                <h:outputLabel  value="Telefone: " for="telefone"  />
+                                <h:inputText class="col-md-3 form-control" id="telefone" value="#{clienteBean.cliente.telefone}" title="Telefone" required="true"/>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-8 col-md-8">
+                                <p:outputLabel for="" value="Comentários:" />
+                                <p:inputTextarea rows="9" cols="60" />
+                            </div>                           
+                        </div>
+
+                        <br/>
+
+                        <div>
+                            <h:commandButton styleClass="btn btn-success" value="Enviar" action="#{clienteBean.salva}"/>
+                        </div>
+
+                    </h:form>
+                </div>
+
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="45%" header="MAIS INFORMAÇÕES">
+                <h:form>
+                    <table><tr><td>
+                                <b:carousel id="PET1" >
+                                    <b:carouselItem >
+                                        <img src="Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img"/>
+
+                                    </b:carouselItem>
+                                    <b:carouselItem>
+                                        <img src="Resources/imagens/Adotar1.jpg" alt="Valladolid"  class="img" />
+
+                                    </b:carouselItem>
+                                </b:carousel> 
+                            </td>
+                            <td>
+
+                                <p:panelGrid  style="margin-left: 30px; width: 300px;" >
+                                    <f:facet name="header">
+
+                                        <p:row >
+                                            <p:column colspan="2" style="text-align: justify;">Raça</p:column>
+                                            <p:column colspan="2">Indefinido</p:column>
+                                        </p:row>
+
+                                        <p:row>
+                                            <p:column colspan="2" style="text-align: justify;">Tamanho</p:column>
+                                            <p:column colspan="2">Médio</p:column>
+                                        </p:row>
+
+                                        <p:row>
+                                            <p:column colspan="2" style="text-align: justify;">Data de Entrada</p:column>
+                                            <p:column colspan="2">05/08/2017</p:column>
+                                        </p:row>
+                                        
+                                        <p:row>
+                                            <p:column colspan="2" style="text-align: justify;">Encontrado</p:column>
+                                            <p:column colspan="2">São Paulo</p:column>
+                                        </p:row>
+
+                                        <p:row>
+                                            <p:column colspan="7">
+                                                Detalhes
+                                            </p:column>
+                                        </p:row>
+                                    </f:facet>
+
+
+                                    <p:row>
+
+                                        <p:column colspan="7" style="text-align: justify;">
+                                            <p>Macho adulto, se dá muito bem com crianças e 
+                                                outros cães. Só não com gatos.
+                                            </p> 
+
+                                        </p:column>
+                                    </p:row>
+
+
+                                </p:panelGrid>
+                            </td>
+
+
+                        </tr>
+
+                    </table>
+
+                </h:form>
+
+            </p:layoutUnit>
+            <p:layoutUnit position="east" size="20%" header="AVALIAÇÃO DE ADOÇÃO">
+                <p:graphicImage url="Resources/imagens/avaliacao.jpg" height="40%"  />
+
+                <div class="texto-lateral" >Se tiver interesse em adotar um de nossos
+                    bichinhos, preencha seus dados que entraremos em contato para 
+                    uma breve avaliação.</div>
+            </p:layoutUnit>
+        </p:layout>
+
+    </h:body>
+</html>
+

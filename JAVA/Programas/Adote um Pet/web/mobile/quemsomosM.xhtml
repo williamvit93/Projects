@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+
+    <h:head>
+        <link rel="stylesheet" href="../Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/main.css"/>
+        <link rel="stylesheet" href="../Resources/css/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+
+    <h:body styleClass="body">
+        <pm:page>
+
+            <ui:insert name="header">
+                <ui:include src="/template/mobilesuperior.xhtml"/>
+            </ui:insert>
+
+            <pm:content>
+                <p:graphicImage url="../Resources/imagens/adoteesq.jpg" width="100%"  />
+
+                <p:separator></p:separator>
+
+                <h:form>
+                    <p:growl id="msgs" showDetail="true" />
+                    <pm:header style="background-color:#51D3D6;color: #ffffff;
+                               font-family: Comic Sans MS;
+                               text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="QUEM SOMOS"></pm:header>
+                    <p:panel id="quemsomos" style="margin-bottom:20px" >
+                        <h:panelGrid columns="2" cellpadding="10" >
+                            <p:graphicImage url="../Resources/imagens/osso.png" height="40%" />
+
+                            <p class="text-img ">A <b>"ADOTE UM PET"</b> é uma ONG (Organização Não Governamental), 
+                                sem fins lucrativos, e que nasceu de um grande sonho do seu
+                                atual presidente: tirar o maior número possível de animais das ruas,
+                                dar tratamento adequado e integrá-los a famílias que lhes deem amor,
+                                carinho e uma vida digna. Atualmente a ONG mantem abrigos com mais de
+                                500 animais que são constantemente tratados por veterinários, alimentados 
+                                com ração de boa qualidade, bebem água potável, dormem em abrigos especialmente
+                                construídos e são tratados com muito amor e carinho por todos os funcionários e 
+                                voluntários que estão sempre visitando as instalações onde ficam os cães.
+                            </p>
+                        </h:panelGrid>
+                    </p:panel>
+                    <pm:header style="background-color:#51D3D6;color: #ffffff;
+                               font-family: Comic Sans MS;
+                               text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="NOSSO TIME"></pm:header>
+                    <p:panel id="nossotime" style="margin-bottom:20px">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage url="../Resources/imagens/pet-care-icon.png" height="60%"  />
+                            <p class="text-img">A Diretoria é formada por empresários, procurador federal
+                                , funcionários de grandes empresas e profissionais liberais,
+                                todos simpatizantes dos animais. Apesar de também contribuírem
+                                com as muitas despesas da ONG (atualmente mais de 30 mil reais
+                                mensais) nunca é o suficiente, motivo pelo qual estão sempre precisando
+                                da ajuda dos amigos e simpatizantes para dar prosseguimento ao trabalho
+                                de resgates, tratamento e adoção de animais.</p>
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+
+                <p:separator></p:separator>
+
+                <p:graphicImage url="../Resources/imagens/adote.jpg" width="100%"  />
+
+            </pm:content>
+            <ui:insert name="header">
+                <ui:include src="/template/mobileinferior.xhtml"/>
+            </ui:insert>
+        </pm:page> 
+
+
+    </h:body>
+
+</html>

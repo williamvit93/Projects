@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center" resizable="true" styleClass="centerUnit">
+
+                <h:form style="margin-left: 25%">
+                    <table><tr><td>
+                                <img src="Resources/imagens/aminoacido1.jpg" style="width:400pt"/>
+
+                            </td>
+                            <td>
+
+                                <p:panelGrid  style="margin-left: 30px; width: 500px;" >
+                                    <f:facet name="header">
+                                        <p:row>
+                                            <p:column colspan="7">
+                                                L-CARNITINA (200GR) - GROWTH SUPPLEMENTS
+                                            </p:column>
+                                        </p:row>
+                                        <p:row >
+                                            <p:column colspan="2"  style="text-align: justify;">Peso Líquido</p:column>
+                                            <p:column colspan="2">200g</p:column>
+                                        </p:row>
+                                        <p:row>
+                                            <p:column colspan="2" style="text-align: justify;">Quantidade</p:column>
+                                            <p:column>
+                                                <p:inputNumber maxValue="99" required="true" requiredMessage="Insira a quantidade"/>
+                                            </p:column>
+                                        </p:row>
+                                        <p:row >
+                                            <p:column colspan="2"  style="text-align: justify;">Preço</p:column>
+                                            <p:column colspan="2">R$ 40.99</p:column>
+                                        </p:row>
+                                        <p:row>
+                                            <p:column colspan="7">
+                                                BENEFÍCIOS
+                                            </p:column>
+                                        </p:row>
+
+                                    </f:facet>
+
+
+                                    <p:row>
+
+                                        <p:column colspan="12" style="text-align: justify;">
+
+                                            <p>A L-Carnitina beneficia especialmente 
+                                                quem está buscando mais saúde. A tendência
+                                                da academia e musculação tem se popularizado,
+                                                despertando ainda mais o interesse sobre a l-carnitina.
+                                                Ele não é um produto descoberto há pouco tempo, e é por 
+                                                isso que sua credibilidade é grande, já que os estudos sobre
+                                                essa suplementação e seus benefícios já possuem décadas de 
+                                                constantes avaliações.
+                                            </p> 
+
+                                        </p:column>
+                                    </p:row>
+
+                                    <p:row>
+                                        <p:column colspan="7">
+                                            <b:commandButton styleClass="w3-button w3-black" value="Comprar" icon="shopping-cart" action="#{clienteBean.Comprar(event)}"/>
+                                        </p:column>
+                                    </p:row>
+                                    <p:row>
+                                        <p:column colspan="7">
+                                            <p:messages/>
+                                        </p:column>
+                                    </p:row>
+                                </p:panelGrid>
+                            </td>
+
+
+                        </tr>
+
+                    </table>
+                </h:form>
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </h:body>
+</html>
+

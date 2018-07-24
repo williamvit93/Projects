@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body" style=".ui-layout-unit-content{ background-color:#1E86A6}">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit  position="center" size="100%" resizable="true">
+
+                <h:form  acceptcharset="ISO-8859-1" styleClass="contatoform">  
+                    <div >
+                        <p:panel  style="background-color: #1E86A6;">
+                            <div class="row">
+                                <div class="col-xs-4 col-md-10">
+                                    <h:outputLabel for="nome" value="Nome:" style="color: white"/>
+                                    <h:inputText styleClass="col-md-3 form-control" id="nome" value="#{clienteBean.cliente.nome}" title="Nome" required="true" requiredMessage="O campo 'NOME' é obrigatório"/>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-xs-4 col-md-10">
+                                    <h:outputLabel for="email" value="Email:" style="color: white"/>
+                                    <h:inputText  styleClass="col-md-3 form-control" id="email" value="#{clienteBean.cliente.email}" title="E-mail" required="true" requiredMessage="O campo 'EMAIL' é obrigatório"/>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-4 col-md-8">
+                                    <h:outputLabel  value="Telefone: " for="telefone" style="color: white"/>
+                                    <h:inputText class="col-md-3 form-control" id="telefone" value="#{clienteBean.cliente.telefone}" title="Telefone" required="true" requiredMessage="O campo 'TELEFONE' é obrigatório"/>
+                                </div>                            
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-md-8">
+                                    <h:outputLabel  value="Comentários: " style="color: white"/>
+                                    <h:inputTextarea cols="50" rows="5" required="true" requiredMessage="O campo 'COMENTÁRIOS' é obrigatório"/>
+                                </div>
+                            </div>
+
+                            <f:facet name="footer">
+                                <h:commandButton styleClass="btn btn-success" value="Enviar" action="#{clienteBean.showMessageContatoEnviado}" actionListener="#{clienteBean.showMessageContatoEnviado}" />
+                            </f:facet>
+
+
+                        </p:panel>
+                    </div>
+                </h:form>
+
+            </p:layoutUnit>
+        </p:layout>
+
+    </h:body>
+</html>
+

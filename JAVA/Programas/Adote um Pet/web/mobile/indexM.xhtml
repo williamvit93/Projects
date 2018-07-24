@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+
+    <h:head>
+        <link rel="stylesheet" href="../Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/main.css"/>
+        <link rel="stylesheet" href="../Resources/css/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+
+    <h:body styleClass="body">
+        <pm:page>
+
+            <ui:insert name="header">
+                <ui:include src="/template/mobilesuperior.xhtml"/>
+            </ui:insert>
+
+            <pm:content>
+                <h:form>
+                    <pm:header style="background-color:#51D3D6;color: #ffffff;
+                               font-family: Comic Sans MS;
+                               text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="NOSSOS PETS"></pm:header>
+                    <div class="texto-lateral img">
+                        <b:carousel id="antesdepois">
+                            <b:carouselItem >
+                                <img src="../Resources/imagens/Antes1.png" alt="Valladolid"  class="img" />
+
+                                <b:carouselCaption >ANTES</b:carouselCaption>
+                            </b:carouselItem>
+                            <b:carouselItem>
+                                <img src="../Resources/imagens/Depois1.png" alt="Valladolid"  class="img"/>
+                                <b:carouselCaption >DEPOIS</b:carouselCaption>
+                            </b:carouselItem>
+
+                            <b:carouselItem>
+                                <img src="../Resources/imagens/Antes2.png" alt="Valladolid"  class="img"/>
+
+                                <b:carouselCaption >ANTES</b:carouselCaption>
+                            </b:carouselItem>
+                            <b:carouselItem>
+                                <img src="../Resources/imagens/Depois2.png" alt="Valladolid"  class="img"/>
+                                <b:carouselCaption >DEPOIS</b:carouselCaption>
+                            </b:carouselItem>
+                            <b:carouselItem>
+                                <img src="../Resources/imagens/Antes3.png" alt="Valladolid"  class="img"/>
+                                <b:carouselCaption >ANTES</b:carouselCaption>
+                            </b:carouselItem>
+                            <b:carouselItem>
+                                <img src="../Resources/imagens/Depois3.png" alt="Valladolid"  class="img" />
+                                <b:carouselCaption >DEPOIS</b:carouselCaption>
+                            </b:carouselItem>
+                        </b:carousel>
+                    </div>
+                </h:form>        
+                <p:separator></p:separator>
+                <pm:header style="background-color:#51D3D6;color: #ffffff;
+                           font-family: Comic Sans MS;
+                           text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="PRÓXIMOS EVENTOS"></pm:header>
+                <b:carousel id="parque" style="width:99%">
+                    <b:carouselItem>
+                        <img src="../Resources/imagens/evento.jpg" alt="Valladolid" width="100%" class="image"/>
+                    </b:carouselItem>
+                    <b:carouselItem>
+                        <img src="../Resources/imagens/Evento2.png" alt="Valladolid" width="100%" class="image"/>
+                    </b:carouselItem>
+
+                </b:carousel>
+
+                <p:separator></p:separator>
+                <pm:header style="background-color:#51D3D6;color: #ffffff;
+                           font-family: Comic Sans MS;
+                           text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="COMPARTILHE"></pm:header>
+                <div class="linktextheader" style="background-color: yellow; text-align: center">
+
+                    REDES SOCIAIS
+                </div>
+                <center>
+                    <b:iconAwesome name="fa-facebook-square" size="2x" style="color: #0033cc;"></b:iconAwesome><b class="linktext">/ADOTEUMPET</b><br/>
+                    <b:iconAwesome name="fa-instagram" size="2x" style="color: #ff9933;"></b:iconAwesome><b class="linktext">/ADOTEUMPET</b><br/>
+                    <b:iconAwesome name="fa-twitter" size="2x" style="color: #3399ff;"></b:iconAwesome><b class="linktext">/ADOTEUMPET</b><br/>
+                </center>
+                <div style="background-color: #51D3D6;">
+                    <div class="linktextheader" style="background-color: yellow; text-align: center">
+
+                        INDIQUE PARA UM AMIGO
+                    </div>
+                    <h:form acceptcharset="ISO-8859-1" style="color: white; border: #51D3D6; border-width: 20pt; border-style: solid;">                       
+
+
+                        <p:outputLabel for="nome" value="Nome:" />
+                        <h:inputText styleClass="form-control" id="nome" value="#{clienteBean.cliente.nome}" title="Nome" required="true" />
+
+                        <br/>
+
+                        <p:outputLabel for="email" value="Email:" />
+                        <h:inputText  styleClass="form-control" id="email" value="#{clienteBean.cliente.email}" title="E-mail" required="true"/>
+
+                        <br/>
+
+                        <p:outputLabel for="" value="Comentários:" />
+                        <p:inputTextarea styleClass="form-control" rows="4" cols="33" />
+
+                        <br/>
+
+                        <div>
+                            <h:commandButton styleClass="btn btn-success" value="Enviar" action="#{clienteBean.salva}"/>
+                        </div>
+                    </h:form>
+                </div>
+            </pm:content>
+            <ui:insert name="header">
+                <ui:include src="/template/mobileinferior.xhtml"/>
+            </ui:insert>
+        </pm:page> 
+
+
+    </h:body>
+
+</html>

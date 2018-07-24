@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+        <ui:composition>
+            <p:layoutUnit position="north">
+                <h:graphicImage url="/faces/imagens/logoPrincipal.png" class="image" width="100%"/>
+                <h:form>
+
+                    <p:menubar>
+                        <p:menuitem value="Início" icon="ui-icon-home" url="/faces/index.xhtml" style="background-color:#cccccc ; border: solid; border-radius: 10pt; text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;"/>
+
+                        <p:menuitem value="Cadastre-se" url="/faces/cadastro.xhtml" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <p:menuitem value="Sobre a empresa" url="/faces/sobre.xhtml" style="text-shadow: black 0.1em 0.1em 0.1em; color: #ffffff;" />
+                        <f:facet name="options">
+                            <p:inputText style="margin-right:10px" placeholder="Usuário"/>
+                            <p:inputText style="margin-right:10px" type="password" placeholder="Senha"/>
+                            <p:commandButton type="button" value="Entrar" icon="ui-icon-extlink" />
+                            <p:link value="Esqueci minha senha" href="esquecisenha.xhtml" style="font-size: 6pt; color: white;"/>
+                        </f:facet>
+
+                    </p:menubar>
+                </h:form>
+            </p:layoutUnit>
+
+        </ui:composition>
+    </h:body>
+</html>

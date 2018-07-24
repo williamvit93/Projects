@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Descobra seu salário</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body>
+        <div class="formback">
+            <div class="container" id="wrap">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <form action="JspServlet" method="get" class="form" role="form">   
+                            <center><h1>Descubra seu salário total</h1></center>
+
+                            <div class="row">
+                                <div class="col-xs-8 col-md-8">
+                                    <input type="text" name="nome" value="" class="form-control input-lg" placeholder="Nome"  required />
+                                </div>
+                                <div class="col-xs-4 col-md-4">
+                                    <input type="text" name="salariobase" value="" class="form-control input-lg" placeholder="Salário"  required/><br>
+                                </div>
+                                <div class="col-xs-4 col-md-4">
+                                    <input type="number" name="venda" value="" class="form-control input-lg" placeholder="Valor vendido" required /><br>
+
+                                    <button class="btn btn-lg btn-primary btn-block signup-btn" name="ok" type="submit">OK</button>
+                                </div>
+        </form>
+    </body>
+</html>

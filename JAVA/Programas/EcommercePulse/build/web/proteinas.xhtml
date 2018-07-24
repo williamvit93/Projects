@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+       <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center" resizable="true" styleClass="centerUnit">
+
+
+
+                <!-- Product grid -->
+                <div>
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/proteina1.jpg" style="width:100%"/>
+
+                                <div class="w3-display-middle w3-display-hover">
+                                    <button class="w3-button w3-black">Comprar <i class="fa fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <p>L-Carnitina (200gr) - Growth Supplements<br/><b class="w3-text-red">R$40.99</b></p>
+                        </div>
+                       
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/proteina2.jpg" style="width:100%"/>
+                                <span class="w3-tag w3-display-topleft">New</span>
+                                <div class="w3-display-middle w3-display-hover">
+                                    <button class="w3-button w3-black">Comprar <i class="fa fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <p>L-Leucine (200gr) - Growth Supplements<br/><b>R$39.99</b></p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/proteina3.jpg" style="width:100%"/>
+
+                                <div class="w3-display-middle w3-display-hover">
+                                    <button class="w3-button w3-black">Comprar <i class="fa fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <p>Creatina Monohidratada 250gr - Growth Supplements<br/><b class="w3-text-red">R$26.99</b></p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/proteina4.jpg" style="width:100%"/>
+
+                                <div class="w3-display-middle w3-display-hover">
+                                    <button class="w3-button w3-black">Comprar <i class="fa fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                            <p>L-Glutamina (250g) - Growth Supplements<br/><b class="w3-text-red">R$42.99</b></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </p:layoutUnit>
+
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menuesquerdo.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/rodape.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+        </p:layout>
+
+    </h:body>
+</html>
+

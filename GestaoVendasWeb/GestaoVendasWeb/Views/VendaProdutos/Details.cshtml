@@ -1,0 +1,99 @@
+﻿@model GestaoVendasWeb.Models.VendaProdutos
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>VendaProdutos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Produto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Produto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PrecoUnitario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PrecoUnitario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Codigo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataVenda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataVenda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Campanhas.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Campanhas.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipos.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipos.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Unidades.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unidades.descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

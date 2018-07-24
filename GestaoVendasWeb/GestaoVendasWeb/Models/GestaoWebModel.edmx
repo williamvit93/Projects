@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GestaoMariluciaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Campanhas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Titulo" Type="nvarchar(max)" />
+          <Property Name="Inicio" Type="nvarchar(max)" />
+          <Property Name="Termino" Type="nvarchar(max)" />
+          <Property Name="Tiposid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="nvarchar(max)" />
+          <Property Name="divida" Type="float" Nullable="false" />
+          <Property Name="ultimoRec" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Enderecos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+          <Property Name="rua" Type="nvarchar(max)" />
+          <Property Name="bairro" Type="nvarchar(max)" />
+          <Property Name="cidade" Type="nvarchar(max)" />
+          <Property Name="cep" Type="nvarchar(max)" />
+          <Property Name="clienteid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="descricao" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Unidades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="descricao" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="VendaProdutos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Produto" Type="nvarchar(max)" />
+          <Property Name="PrecoUnitario" Type="float" Nullable="false" />
+          <Property Name="Codigo" Type="nvarchar(max)" />
+          <Property Name="Observacao" Type="nvarchar(max)" />
+          <Property Name="Quantidade" Type="int" Nullable="false" />
+          <Property Name="DataVenda" Type="nvarchar(max)" />
+          <Property Name="Clienteid" Type="int" Nullable="false" />
+          <Property Name="Tipoid" Type="int" Nullable="false" />
+          <Property Name="Unidadeid" Type="int" Nullable="false" />
+          <Property Name="Campanhaid" Type="int" />
+        </EntityType>
+        <Association Name="FK_dbo_Campanhas_dbo_Tipos_Tiposid">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Campanhas" Type="Self.Campanhas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Campanhas">
+              <PropertyRef Name="Tiposid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Enderecos_dbo_Clientes_clienteid">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Enderecos" Type="Self.Enderecos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Enderecos">
+              <PropertyRef Name="clienteid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_VendaProdutos_dbo_Campanhas_Campanhaid">
+          <End Role="Campanhas" Type="Self.Campanhas" Multiplicity="0..1" />
+          <End Role="VendaProdutos" Type="Self.VendaProdutos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campanhas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VendaProdutos">
+              <PropertyRef Name="Campanhaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_VendaProdutos_dbo_Clientes_Clienteid">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="VendaProdutos" Type="Self.VendaProdutos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VendaProdutos">
+              <PropertyRef Name="Clienteid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_VendaProdutos_dbo_Tipos_Tipoid">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="1" />
+          <End Role="VendaProdutos" Type="Self.VendaProdutos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VendaProdutos">
+              <PropertyRef Name="Tipoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_VendaProdutos_dbo_Unidades_Unidadeid">
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+          <End Role="VendaProdutos" Type="Self.VendaProdutos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unidades">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VendaProdutos">
+              <PropertyRef Name="Unidadeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GestaoMariluciaModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Campanhas" EntityType="Self.Campanhas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Enderecos" EntityType="Self.Enderecos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipos" EntityType="Self.Tipos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unidades" EntityType="Self.Unidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VendaProdutos" EntityType="Self.VendaProdutos" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_Campanhas_dbo_Tipos_Tiposid" Association="Self.FK_dbo_Campanhas_dbo_Tipos_Tiposid">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="Campanhas" EntitySet="Campanhas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Enderecos_dbo_Clientes_clienteid" Association="Self.FK_dbo_Enderecos_dbo_Clientes_clienteid">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Enderecos" EntitySet="Enderecos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_VendaProdutos_dbo_Campanhas_Campanhaid" Association="Self.FK_dbo_VendaProdutos_dbo_Campanhas_Campanhaid">
+            <End Role="Campanhas" EntitySet="Campanhas" />
+            <End Role="VendaProdutos" EntitySet="VendaProdutos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_VendaProdutos_dbo_Clientes_Clienteid" Association="Self.FK_dbo_VendaProdutos_dbo_Clientes_Clienteid">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="VendaProdutos" EntitySet="VendaProdutos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_VendaProdutos_dbo_Tipos_Tipoid" Association="Self.FK_dbo_VendaProdutos_dbo_Tipos_Tipoid">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="VendaProdutos" EntitySet="VendaProdutos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_VendaProdutos_dbo_Unidades_Unidadeid" Association="Self.FK_dbo_VendaProdutos_dbo_Unidades_Unidadeid">
+            <End Role="Unidades" EntitySet="Unidades" />
+            <End Role="VendaProdutos" EntitySet="VendaProdutos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GestaoMariluciaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Campanhas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Inicio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Termino" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tiposid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tipos" Relationship="Self.FK_dbo_Campanhas_dbo_Tipos_Tiposid" FromRole="Campanhas" ToRole="Tipos" />
+          <NavigationProperty Name="VendaProdutos" Relationship="Self.FK_dbo_VendaProdutos_dbo_Campanhas_Campanhaid" FromRole="Campanhas" ToRole="VendaProdutos" />
+        </EntityType>
+        <EntityType Name="Clientes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="divida" Type="Double" Nullable="false" />
+          <Property Name="ultimoRec" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Enderecos" Relationship="Self.FK_dbo_Enderecos_dbo_Clientes_clienteid" FromRole="Clientes" ToRole="Enderecos" />
+          <NavigationProperty Name="VendaProdutos" Relationship="Self.FK_dbo_VendaProdutos_dbo_Clientes_Clienteid" FromRole="Clientes" ToRole="VendaProdutos" />
+        </EntityType>
+        <EntityType Name="Enderecos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numero" Type="Int32" Nullable="false" />
+          <Property Name="rua" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bairro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cidade" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cep" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="clienteid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_dbo_Enderecos_dbo_Clientes_clienteid" FromRole="Enderecos" ToRole="Clientes" />
+        </EntityType>
+        <EntityType Name="Tipos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Campanhas" Relationship="Self.FK_dbo_Campanhas_dbo_Tipos_Tiposid" FromRole="Tipos" ToRole="Campanhas" />
+          <NavigationProperty Name="VendaProdutos" Relationship="Self.FK_dbo_VendaProdutos_dbo_Tipos_Tipoid" FromRole="Tipos" ToRole="VendaProdutos" />
+        </EntityType>
+        <EntityType Name="Unidades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="VendaProdutos" Relationship="Self.FK_dbo_VendaProdutos_dbo_Unidades_Unidadeid" FromRole="Unidades" ToRole="VendaProdutos" />
+        </EntityType>
+        <EntityType Name="VendaProdutos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Produto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrecoUnitario" Type="Double" Nullable="false" />
+          <Property Name="Codigo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Observacao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Quantidade" Type="Int32" Nullable="false" />
+          <Property Name="DataVenda" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Clienteid" Type="Int32" Nullable="false" />
+          <Property Name="Tipoid" Type="Int32" Nullable="false" />
+          <Property Name="Unidadeid" Type="Int32" Nullable="false" />
+          <Property Name="Campanhaid" Type="Int32" />
+          <NavigationProperty Name="Campanhas" Relationship="Self.FK_dbo_VendaProdutos_dbo_Campanhas_Campanhaid" FromRole="VendaProdutos" ToRole="Campanhas" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_dbo_VendaProdutos_dbo_Clientes_Clienteid" FromRole="VendaProdutos" ToRole="Clientes" />
+          <NavigationProperty Name="Tipos" Relationship="Self.FK_dbo_VendaProdutos_dbo_Tipos_Tipoid" FromRole="VendaProdutos" ToRole="Tipos" />
+          <NavigationProperty Name="Unidades" Relationship="Self.FK_dbo_VendaProdutos_dbo_Unidades_Unidadeid" FromRole="VendaProdutos" ToRole="Unidades" />
+        </EntityType>
+        <Association Name="FK_dbo_Campanhas_dbo_Tipos_Tiposid">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Campanhas" Type="Self.Campanhas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Campanhas">
+              <PropertyRef Name="Tiposid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_VendaProdutos_dbo_Campanhas_Campanhaid">
+          <End Role="Campanhas" Type="Self.Campanhas" Multiplicity="0..1" />
+          <End Role="VendaProdutos" Type="Self.VendaProdutos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Campanhas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="VendaProdutos">
+              <PropertyRef Name="Campanhaid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Enderecos_dbo_Clientes_clienteid">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Enderecos" Type="Self.Enderecos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Enderecos">
+              <PropertyRef Name="clienteid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_VendaProdutos_dbo_Clientes_Clienteid">
+          <End Role="Clientes" Type="Self.Clientes" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="VendaProdutos" Type="Self.VendaProdutos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clientes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VendaProdutos">
+              <PropertyRef Name="Clienteid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_VendaProdutos_dbo_Tipos_Tipoid">
+          <End Role="Tipos" Type="Self.Tipos" Multiplicity="1" />
+          <End Role="VendaProdutos" Type="Self.VendaProdutos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tipos">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VendaProdutos">
+              <PropertyRef Name="Tipoid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_VendaProdutos_dbo_Unidades_Unidadeid">
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+          <End Role="VendaProdutos" Type="Self.VendaProdutos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Unidades">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="VendaProdutos">
+              <PropertyRef Name="Unidadeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="GestaoMariluciaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Campanhas" EntityType="Self.Campanhas" />
+          <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+          <EntitySet Name="Enderecos" EntityType="Self.Enderecos" />
+          <EntitySet Name="Tipos" EntityType="Self.Tipos" />
+          <EntitySet Name="Unidades" EntityType="Self.Unidades" />
+          <EntitySet Name="VendaProdutos" EntityType="Self.VendaProdutos" />
+          <AssociationSet Name="FK_dbo_Campanhas_dbo_Tipos_Tiposid" Association="Self.FK_dbo_Campanhas_dbo_Tipos_Tiposid">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="Campanhas" EntitySet="Campanhas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_VendaProdutos_dbo_Campanhas_Campanhaid" Association="Self.FK_dbo_VendaProdutos_dbo_Campanhas_Campanhaid">
+            <End Role="Campanhas" EntitySet="Campanhas" />
+            <End Role="VendaProdutos" EntitySet="VendaProdutos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Enderecos_dbo_Clientes_clienteid" Association="Self.FK_dbo_Enderecos_dbo_Clientes_clienteid">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="Enderecos" EntitySet="Enderecos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_VendaProdutos_dbo_Clientes_Clienteid" Association="Self.FK_dbo_VendaProdutos_dbo_Clientes_Clienteid">
+            <End Role="Clientes" EntitySet="Clientes" />
+            <End Role="VendaProdutos" EntitySet="VendaProdutos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_VendaProdutos_dbo_Tipos_Tipoid" Association="Self.FK_dbo_VendaProdutos_dbo_Tipos_Tipoid">
+            <End Role="Tipos" EntitySet="Tipos" />
+            <End Role="VendaProdutos" EntitySet="VendaProdutos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_VendaProdutos_dbo_Unidades_Unidadeid" Association="Self.FK_dbo_VendaProdutos_dbo_Unidades_Unidadeid">
+            <End Role="Unidades" EntitySet="Unidades" />
+            <End Role="VendaProdutos" EntitySet="VendaProdutos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GestaoMariluciaModelStoreContainer" CdmEntityContainer="GestaoMariluciaEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="GestaoMariluciaModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Campanhas">
+            <EntityTypeMapping TypeName="GestaoMariluciaModel.Campanhas">
+              <MappingFragment StoreEntitySet="Campanhas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+                <ScalarProperty Name="Termino" ColumnName="Termino" />
+                <ScalarProperty Name="Tiposid" ColumnName="Tiposid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="GestaoMariluciaModel.Clientes">
+              <MappingFragment StoreEntitySet="Clientes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="divida" ColumnName="divida" />
+                <ScalarProperty Name="ultimoRec" ColumnName="ultimoRec" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Enderecos">
+            <EntityTypeMapping TypeName="GestaoMariluciaModel.Enderecos">
+              <MappingFragment StoreEntitySet="Enderecos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="rua" ColumnName="rua" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="clienteid" ColumnName="clienteid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipos">
+            <EntityTypeMapping TypeName="GestaoMariluciaModel.Tipos">
+              <MappingFragment StoreEntitySet="Tipos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Unidades">
+            <EntityTypeMapping TypeName="GestaoMariluciaModel.Unidades">
+              <MappingFragment StoreEntitySet="Unidades">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VendaProdutos">
+            <EntityTypeMapping TypeName="GestaoMariluciaModel.VendaProdutos">
+              <MappingFragment StoreEntitySet="VendaProdutos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Produto" ColumnName="Produto" />
+                <ScalarProperty Name="PrecoUnitario" ColumnName="PrecoUnitario" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+                <ScalarProperty Name="DataVenda" ColumnName="DataVenda" />
+                <ScalarProperty Name="Clienteid" ColumnName="Clienteid" />
+                <ScalarProperty Name="Tipoid" ColumnName="Tipoid" />
+                <ScalarProperty Name="Unidadeid" ColumnName="Unidadeid" />
+                <ScalarProperty Name="Campanhaid" ColumnName="Campanhaid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

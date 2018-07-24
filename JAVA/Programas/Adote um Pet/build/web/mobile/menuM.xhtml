@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:pm="http://primefaces.org/mobile">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+    <h:head>
+        <link rel="stylesheet" href="../Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/main.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </h:head>
+    <h:body styleClass="body">
+        <pm:page style="background-color:#51D3D6;">
+            <pm:header style="background-color:black;">
+                <f:facet name="left">
+                    <p:button  outcome="/mobile/indexM" value="" icon="glyphicon glyphicon-chevron-left"/>
+                </f:facet>
+                
+            </pm:header>
+
+            <pm:content >
+
+                <p:menu >
+
+                    <p:menuitem style="background-color:#51D3D6;color: white;text-shadow: black 0.1em 0.1em 0.2em;" value="FAÇA SUA DOAÇÃO" url="doacaoM.xhtml" />
+                    <p:menuitem style="background-color:#51D3D6;color: white;text-shadow: black 0.1em 0.1em 0.2em;" value="PAINEL DA TRANSPARÊNCIA" url="paineltransparenciaM.xhtml" />
+                    <p:menuitem style="background-color:#51D3D6;color: white;text-shadow: black 0.1em 0.1em 0.2em;" value="ADOTAR" url="adotarM.xhtml"/>
+                    <p:menuitem style="background-color:#51D3D6;color: white;text-shadow: black 0.1em 0.1em 0.2em;" value="ANUNCIAR" url="anunciarM.xhtml"/>
+                    <p:menuitem style="background-color:#51D3D6;color: white;text-shadow: black 0.1em 0.1em 0.2em;" value="QUEM SOMOS" url="quemsomosM.xhtml"/>
+
+                </p:menu>
+            </pm:content>
+        </pm:page>
+    </h:body>
+</html>

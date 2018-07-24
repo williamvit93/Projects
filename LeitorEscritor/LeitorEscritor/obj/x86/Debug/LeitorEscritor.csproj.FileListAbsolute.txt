@@ -1,0 +1,17 @@
+\\eu.boehringer.com\users\sao\users1\abreuwi\documents\visual studio 2010\Projects\LeitorEscritor\LeitorEscritor\bin\Debug\LeitorEscritor.exe
+\\eu.boehringer.com\users\sao\users1\abreuwi\documents\visual studio 2010\Projects\LeitorEscritor\LeitorEscritor\bin\Debug\LeitorEscritor.pdb
+\\eu.boehringer.com\users\sao\users1\abreuwi\documents\visual studio 2010\Projects\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.Properties.Resources.resources
+\\eu.boehringer.com\users\sao\users1\abreuwi\documents\visual studio 2010\Projects\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.csproj.GenerateResource.Cache
+\\eu.boehringer.com\users\sao\users1\abreuwi\documents\visual studio 2010\Projects\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.exe
+\\eu.boehringer.com\users\sao\users1\abreuwi\documents\visual studio 2010\Projects\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.pdb
+\\eu.boehringer.com\users\sao\users1\abreuwi\documents\visual studio 2010\Projects\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.Form1.resources
+\\eu.boehringer.com\users\sao\users1\abreuwi\documents\visual studio 2010\Projects\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.csprojResolveAssemblyReference.cache
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\bin\Debug\LeitorEscritor.exe
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\bin\Debug\LeitorEscritor.pdb
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.csprojResolveAssemblyReference.cache
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.Form1.resources
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.Properties.Resources.resources
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.csproj.GenerateResource.Cache
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.csproj.CoreCompileInputs.cache
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.exe
+C:\Users\willi\OneDrive\Documentos\Visual Studio 2017\projetos\LeitorEscritor\LeitorEscritor\obj\x86\Debug\LeitorEscritor.pdb

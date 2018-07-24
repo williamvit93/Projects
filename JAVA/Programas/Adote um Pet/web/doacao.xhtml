@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>ADOTE UM PET</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                        
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="west"  size="28%">
+
+
+                <img class="text-img" src="Resources/imagens/doacao.png" width="55%"/> 
+                <p class="textos">
+                    Existem muitas formas de nos ajudar a cuidar dos pets que estão 
+                    abrigados, fora os pets que ajudamos a sustentar de outros protetores.
+                    Você pode doar ração, cobertores, medicamentos, material de limpeza e 
+                    por meio do PagSeguro, além de que cada feira de adoção proporcionada permite
+                    fazer as doações pessoalmente de todos utensílios.
+
+                </p>
+
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" >
+                <p:panel header ="FAÇA DOAÇÕES UNITÁRIAS" style="background-color: #51D3D6">
+                    <h:panelGrid>
+
+
+                        <div class="pagsegurotxt" >
+                            Utilizando essa função, você pode doar o valor que desejar, 
+                            apenas clicando no botão abaixo.
+                        </div>
+                        <form class="pagseguro" action="https://pagseguro.uol.com.br/checkout/v2/donation.html" method="post">
+                            <input type="hidden" name="currency" value="BRL" />
+                            <input type="hidden" name="receiverEmail" value="williamvit93@hotmail.com" />
+                            <input type="hidden" name="iot" value="button" />
+                            <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/doacoes/120x53-doar-azul.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                        </form>
+                    </h:panelGrid>
+                </p:panel>
+                <p:panel header="SEJA UM DOADOR RECORRENTE" style="background-color: #51D3D6">
+                    <h:panelGrid>
+                        <div class="pagsegurotxt" >
+                            Um doador recorrente poderá ajudar a ADOTE UM PET mensalmente
+                            via cartão de crédito. É muito seguro e você pode suspender 
+                            suas doações no momento em que precisar.
+                            </div>
+                            <form  class="pagseguro" action="https://pagseguro.uol.com.br/pre-approvals/request.html" method="post">
+                                <input type="hidden" name="code" value="EDDB2648C7C7DC9554B7FF9B72F29A5D" />
+                                <input type="hidden" name="iot" value="button" />
+                                <input type="image" src="https://stc.pagseguro.uol.com.br/public/img/botoes/assinaturas/120x53-assinar-azul.gif" name="submit" alt="Pague com PagSeguro - É rápido, grátis e seguro!" width="120" height="53" />
+                            </form> 
+                    </h:panelGrid>
+                </p:panel>
+
+
+
+
+            </p:layoutUnit>
+
+            <p:layoutUnit position="east" size="28%">
+
+                <img  src="Resources/imagens/doe.jpg" width="100%"/>
+            </p:layoutUnit>
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/rodape.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+        </p:layout>
+
+    </h:body>
+</html>
+

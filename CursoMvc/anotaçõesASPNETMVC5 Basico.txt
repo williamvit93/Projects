@@ -1,0 +1,104 @@
+--Básico--
+
+TDD = test driven development
+bootwatch.com para troca temas, copiar o template e colar dentro do arquivo bootstrap
+wrap bootstrap templates completos pagos
+utilizar bundle parareduzir e juntar os arquivos em pacotes, reduzindo o custo de download e quantidade de itens a baixar
+criação de código com webessentials ex: div*4>li*5>lorem5
+
+exemplo de: passar duas entradas em um action result ex: (int id , string nome) Action/id?nome="nome"
+criar conn string no arquivo Web.config, entre config section e appSettings
+criar construtor na classe context passando Base: ("nome da connn string do web.config")
+
+Criar Scaffolding Controller, referenciar a classe de modelo e o layout page (cria o CRUD básico + as views relacionadas com as classes controllers)
+
+definir mensagem de erro no dataAnotation logo acima do nome da variavel
+definir dataAnnotation [ScafoldedColumn(false)] para não adicionar campo para inserção na view
+{EmailAddress] Data anotation para validar emails.
+[DisplayName] para modificar o nome dos campos na visualização
+
+--Essencial--
+
+Pipeline faz o mapeamento do caminho das requisições para o servidor (inicio 4º video)
+Criar logs no Action Execution
+
+Identity, Gestão de usuários - Authetication, Authorization, OAuth e OpenID (45 min, 4º video)
+Role provider, perfil de acessos.
+Claims Based,chaves adicionais para guardar mais informações sobre o usuario acesso facilitado, conecta com redes sociais.
+integração com Active Directory.
+Two Factor Authentication, verificação de usuário por dois fatores , LOGIN e SENHA + código de verificação
+Account Lockout, bloqueio de usuário por erro de senha e/ou usuario
+Account confirmation, envio de confirmação de email no email cadastrado
+password reset, envio de link para email para redefinição de senha
+Security Stamp, registro de todos os locais logados com o usuario, logout de qualquer lugar
+Enhanced Password validator, configuração de formato de senha obrigatorio.
+
+--Estruturação de solução em camadas--
+
+1 - Presentation
+2 - Services
+3 - Application
+4 - Domain = NÃO PODE DEPENDER DE NENHUM RECURSO EXTERNO, EXCLUIR TODAS AS REFERENCIAS MENOS SYSTEM.CLASSES POCO
+5 - Infra
+	5.1 - Data
+	5.2 - CrossCutting
+
+Criar pastas src, tests e docs dentro da pasta da Solution
+
+OBS: NameSpaces dos projetos devem ter a seguinte estrutura : NomeDaEmpresa.NomeDoProjeto.NomeDaCamada
+
+Usar tipo GUID para criar chaves nas classes.
+
+ORM
+	LazyLoading
+	ex: var clientes = DB.Cliente.ToList();
+	clientes.Enderecos[posicao no array].Cep;
+	EagerLoading
+
+public virtual ICollection<Endereco> Enderecos{get;set;} Virtual ativa o Lazy Loading
+criar propriedade de navegação, além de colocar a chave estrangeira CLienteId na tabela Endereco, tambem deve-se colocar um objeto do tipo Cliente declarado 
+como VIRTUAL.
+Adicionar uma lista de Enderecos no construtor da classe Cliente.
+
+//Acessar dados em outras tipos de banco = Devart Oracle EF, baixar driver dotConnect para Oracle
+
+OBS: P/ CRIAR CONSTRUTOR DIGITAR CTOR <TAB>
+OBS: QUANDO HABILITAR AS MIGRATIONS, SETAR O ITEM AUTOMATIC MIGRATIONS ENABLED COMO TRUE.
+OBS: APÓS CRIAR O PROJETO MVC NA PASTA PRESENTATIONS, SETAR ELE COMO STARTUP PROJECT, CLICANDO COM O BOTÃO DIREITO EM CIMA DELE NA SOLUTION EXPLORER
+
+pesquisar sobre Resources com Messagens multilinguagem
+
+DAPPER, ferramenta de banco de dados que otimiza as consultas, instalar na camada de dados
+usando DAPPER:( instalar via nuget e criar uma string sql e retornar a variavel de contexto.Database.Connection.Query<Cliente>(sql);
+OBS: As querys devem ter as colunas do banco de dados iguais as variaveis das classes
+
+Após a criação da controller de erros, criar as views e substituir o código no de erro no webconfig abaixo dentro do bloco System.WebServer
+
+<httpErrors errorMode ="Custom" existingResponse ="Replace">
+      <remove statusCode="500"/>
+      <remove statusCode="404"/>
+      <remove statusCode="403"/>
+      <error statusCode="500" responseMode="ExecuteURL" path ="/Error/Index"/>
+      <error statusCode="404" responseMode="ExecuteURL" path ="/Error/NotFound"/>
+      <error statusCode="403" responseMode="ExecuteURL" path ="/Error/AccessDenied"/>
+</httpErrors>
+
+Padrões de Arquitetura
+DDD - Domain Driven Design
+Linguagem Ubíqua = termos especificos do negocio que não devem ser substituidos.
+Bounded Context 
+
+Tipos de Relacionamentos
+Conformist = Contextos Downstream dependem de contextos Upstream. Nenhuma negociação é permitida
+Customer/Supplier = Contextos Customer dependem de Contextos Supplier. Oportunidade de levantar preocupações e abordar alguma solução.
+Partner = Dependencia mútua entre dois contextos
+Shared Kernel = Um modelo compartilhado não pode ser alterado sem consultar os times que dependem dele
+Anti-Corruption Layer = Camada adicional dando ao contexto Downstream uma interface fixa independente do que acontece com contexto Upstream  
+
+
+
+tempo: 2h45 essencial II
+
+Clean Code - Matin C Bob
+
+eduardopires.net.br

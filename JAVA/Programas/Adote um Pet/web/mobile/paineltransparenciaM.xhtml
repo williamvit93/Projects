@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pm="http://primefaces.org/mobile"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <f:view renderKitId="PRIMEFACES_MOBILE" />
+
+    <h:head>
+        <link rel="stylesheet" href="../Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="../Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="../Resources/css/main.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </h:head>
+
+    <h:body styleClass="body">
+        <pm:page>
+
+            <ui:insert name="header">
+                <ui:include src="/template/mobilesuperior.xhtml"/>
+            </ui:insert>
+
+            <pm:content>
+                <pm:header style="background-color:#51D3D6;color: #ffffff;
+                           font-family: Comic Sans MS;
+                           text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="TRANSPARÊNCIA"></pm:header>
+                <p:graphicImage url="../Resources/imagens/transparencia.png" width="100%"/>
+                <p class="text-img">A ONG <b>"ADOTE UM PET"</b> é uma organização não 
+                    governamental sem fins lucrativos que tem o compromisso de destinar
+                    65% de todos os recursos arrecadados às atividades inerentes ao cuidado
+                    dos animais em estado de abandono. Os demais 35% são utilizados para despesas
+                    administrativas. 
+                    O uso dos recursos da <b>"ADOTE UM PET"</b> é rigorosamente controlado. As informações 
+                    detalhadas da atuação da organização podem ser vistas logo abaixo.</p>
+
+                <p:separator></p:separator>
+
+                <pm:header style="background-color:#51D3D6;color: #ffffff;
+                           font-family: Comic Sans MS;
+                           text-shadow: black 0.1em 0.1em 0.2em;font-size: 12pt;" title="PRESTAÇÃO DE CONTAS"></pm:header>
+                <h:form>
+                    <p:growl id="growl" showDetail="true" />
+
+                    <h:panelGrid columns="2" columnClasses="left,right" style="width:100%">
+                        <p:graphicImage url="../Resources/imagens/grafico.png" width="100%"/>
+                        <div>
+                            <h:button value="VER DETALHES" outcome="/mobile/detalhesM" class="btn-success" />
+                        </div>
+
+                    </h:panelGrid>
+
+                </h:form>
+
+                <p:separator></p:separator>
+
+            </pm:content>
+            <ui:insert name="header">
+                <ui:include src="/template/mobileinferior.xhtml"/>
+            </ui:insert>
+        </pm:page> 
+
+
+    </h:body>
+
+</html>

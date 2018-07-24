@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <link rel="stylesheet" href="Resources/css/w3.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <title>ADOTE UM PET</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                        
+                    </ui:insert>
+                </div>
+            </div>
+
+            <p:layoutUnit position="west" size="20%" header="ADOÇÃO">
+
+
+                <p class="textos">Agradecemos seu interesse em adotar um pet sem dono. 
+                    Mas, se você tem interesse em adotar um dos nossos pets, 
+                    precisamos saber um pouco mais de você, pois do ponto de 
+                    vista do animal, ser abandonado pelo amigo é muito doloroso… 
+                    e eles já sofreram isso uma vez e não queremos que isso se repita. 
+                    Eles não merecem ser tratados com desprezo.
+                    Sendo assim, ao clicar em adotar você encontrará uma ficha de <b>Cadastro</b>. 
+                    Ela deverá ser totalmente preenchida. 
+                    Após análise, entraremos em contato com você.</p>
+
+                <br/>
+                <div style="background-color: yellow">
+                    <p><b>
+                            TODOS OS ANIMAIS SÃO CASTRADOS E VACINADOS. ALGUNS ANIMAIS ESTÃO EM 
+                            TRATAMENTO VETERINARIO
+                        </b></p>
+                </div>
+
+            </p:layoutUnit>
+
+
+
+            <p:layoutUnit position="center" resizable="true" styleClass="centerUnit">
+
+
+
+                <!-- Product grid -->
+                <div class="w3-row " style="background-color: #51D3D6">
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/Adotar1.jpg" style="width:67%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="pet1" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/Adotar2.jpg" style="width:67%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="index" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/Adotar3.jpg" style="width:67%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="index" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Fêmea
+                            </div>
+                        </div>
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/Adotar4.png" style="width:67%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="index" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/Adotar5.jpg" style="width:67%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="index" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/Adotar6.jpg" style="width:67%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="index" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-col l3 s6">
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/Adotar7.jpg" style="width:67%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="index" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                        <div class="w3-container">
+                            <div class="w3-display-container">
+                                <img src="Resources/imagens/Adotar8.jpg" style="width:67%"/>
+
+                                <div class="w3-display-topleft w3-display-hover">
+                                    <h:button outcome="index" class="w3-button w3-black"  value="Adotar"/>
+                                </div>
+                            </div>
+                            <div class="ui-g-8">
+                                Macho
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p:layoutUnit>
+
+
+
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/rodape.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+        </p:layout>
+
+    </h:body>
+</html>
+

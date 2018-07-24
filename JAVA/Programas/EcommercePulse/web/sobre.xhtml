@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center" resizable="true" styleClass="centerUnit" header="Sobre Nós">
+                <div style="position: absolute;left: 30%;width: 570pt;">
+                    <p:panel style="background-color: #1E86A6; border-radius: 20px;">
+                        <p style=" color: white;" class="txtgrande">A “Indústria Química Pulse”, fundada há 40 anos, em 1977 na 
+                            cidade de Santos, é conhecida pela fabricação de suplementos 
+                            alimentares e remédios para controle de peso para adultos, 
+                            crianças e idosos, tendo uma boa reputação no mercado.	
+                            A Indústria Química Pulse fornece suplementos alimentares para
+                            todas as principais lojas de suplementos e as principais farmácias 
+                            do Brasil e América Latina. </p>
+
+                        <p style=" color: white;" class="txtgrande">A Indústria Química Pulse, sempre busca a melhoria em sua empresa
+                            para manter a boa reputação em seus serviços e assim viu que necessita
+                            da inclusão de novas soluções tecnológicas para poder contribuir com a 
+                            expansão de seu mercador consumidor, assim sua posição de destaque nos 
+                            segmentos em que atua irá continuar.</p>
+                    </p:panel>
+                </div>
+            </p:layoutUnit>
+
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menuesquerdo.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/rodape.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+        </p:layout>
+
+    </h:body>
+</html>
+

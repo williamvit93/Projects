@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/ecommerceCSS.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>Química Pulse</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center" size="300" >
+                <div style="background-color: #1E86A6;">
+
+
+                    <h:form style="color: white; border: #1E86A6; border-width: 20pt; border-style: solid;">                       
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <p:outputLabel for="nome" value="Nome:" />
+                                <h:inputText styleClass="col-md-3 form-control" id="nome" value="#{clienteBean.cliente.nome}" title="Nome" required="true"/>
+                            </div>
+                            <div class="col-xs-4 col-md-2">
+                                <p:outputLabel for="cpf" value="CPF:" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="cpf" value="#{clienteBean.cliente.cpf}" title="CPF" required="true"/>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <p:outputLabel for="email" value="Email:" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="email" value="#{clienteBean.cliente.email}" title="E-mail" required="true"/>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <p:outputLabel for="rua" value="Rua:" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="rua" value="#{clienteBean.cliente.rua}" title="Rua" required="true"/>
+                            </div>
+
+                            <div class="col-xs-4 col-md-2">
+                                <p:outputLabel for="numero" value="Nº:" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="numero" value="#{clienteBean.cliente.numero}" title="Numero" required="true"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <p:outputLabel for="cidade" value="Cidade:" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="cidade" value="#{clienteBean.cliente.cidade}" title="Cidade" required="true"/>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <p:outputLabel for="pais" value="País:" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="pais" value="#{clienteBean.cliente.pais}" title="Pais" required="true"/>
+                            </div>
+                            <div class="col-xs-4 col-md-4">
+                                <p:outputLabel for="cep" value="CEP:" />
+                                <h:inputText  styleClass="col-md-3 form-control" id="cep" value="#{clienteBean.cliente.cep}" title="CEP" required="true"/>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel  value="Telefone: " for="telefone" />
+                                <h:inputText class="col-md-3 form-control" id="telefone" value="#{clienteBean.cliente.telefone}" title="Telefone" required="true"/>
+                            </div>                            
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel  value="Usuário: " for="usuario" />
+                                <h:inputText class="col-md-3 form-control" id="usuario" value="#{clienteBean.cliente.usuario}" title="Usuario" required="true"/>
+                            </div>     
+
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel  value="Senha: " for="senha" />
+                                <p:password styleClass="col-md-3 form-control" id="feedback" value="#{clienteBean.cliente.senha}" feedback="true" required="true"/>
+                            </div></div>
+                        <div class="row">
+                            <div class="col-xs-4 col-md-4">
+                                <h:outputLabel  value="Confirmar Senha: " for="confirmasenha" />
+                                <h:inputText class="col-md-3 form-control" id="confirmasenha"  value="#{clienteBean.cliente.confirmasenha}" title="Confirmar Senha" required="true"/>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div>
+                            <h:commandButton styleClass="btn btn-success" value="Cadastrar" action="#{clienteBean.salva}"/>
+                        </div>
+
+
+                    </h:form></div>
+            </p:layoutUnit>
+
+
+
+        </p:layout>
+
+    </h:body>
+</html>
+

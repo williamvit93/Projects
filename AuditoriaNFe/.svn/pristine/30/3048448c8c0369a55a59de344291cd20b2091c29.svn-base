@@ -1,0 +1,164 @@
+﻿using System;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Configuration;
+using System.Threading.Tasks;
+using System.Timers;
+
+namespace AuditoriaNFeJob
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                var arquivoChave = ConfigurationManager.AppSettings["ArquivoChave"];
+                var caminhoNFE = ConfigurationManager.AppSettings["CaminhoNFE"];
+                var caminhoCTE = ConfigurationManager.AppSettings["CaminhoCTE"];
+                var caminhoCTEFatura = ConfigurationManager.AppSettings["CaminhoCTEFatura"];
+                
+                
+
+                var arquivosNFE = Directory.GetFiles(caminhoNFE, "*", SearchOption.AllDirectories);
+                var arquivosCTE = Directory.GetFiles(caminhoCTE, "*", SearchOption.AllDirectories);
+                var arquivosCTEFatura = Directory.GetFiles(caminhoCTEFatura, "*", SearchOption.AllDirectories);
+
+                var linhaFormato = "\'{0};{1};{2};{3}";
+
+                // lê o arquivo de chave única de comparação
+                var arquivoChaveUnica = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, arquivoChave));
+                
+                var sb = new StringBuilder();
+
+                var sbTime = new StringBuilder();
+
+                //Controle de tempo
+                System.DateTime horario = DateTime.Now;
+
+                sb.AppendLine("Chave;XML;PDF;Tipo");
+
+                var chavesRestantes = arquivoChaveUnica.Distinct().Count();
+
+
+                // loop em paralelo 
+                Parallel.ForEach(arquivoChaveUnica.Distinct(), new ParallelOptions() { MaxDegreeOfParallelism = 20 }, (chaveUnica) =>
+                {
+                    
+                    
+                    Console.Clear();
+                    Console.WriteLine("Chaves restantes: " + chavesRestantes--);
+                    
+                    
+
+                    var encontrouPDF = "não";
+                    var encontrouXML = "não";
+                    var tipo = "?";
+
+                    var arquivosNFeEncontrados = arquivosNFE.Where(x => x.Contains(chaveUnica));
+                    if (arquivosNFeEncontrados != null && arquivosNFeEncontrados.Count() > 0)
+                    {
+                        tipo = "NFe";
+                    }
+                    encontrouPDF = arquivosNFeEncontrados.FirstOrDefault(x => x.Contains("pdf")) == null ? "não" : "sim";
+                    encontrouXML = arquivosNFeEncontrados.FirstOrDefault(x => x.Contains("xml")) == null ? "não" : "sim";
+
+                    if (encontrouXML == "sim" && encontrouPDF == "sim")
+                    {
+                        sb.AppendLine(string.Format(linhaFormato, chaveUnica, encontrouXML, encontrouPDF, tipo));
+                        return;
+                    }
+
+                    var arquivosCTeEncontrados = arquivosCTE.Where(x => x.Contains(chaveUnica));
+                    if (arquivosCTeEncontrados != null && arquivosCTeEncontrados.Count() > 0)
+                    {
+                        tipo = "CTe";
+                    }
+                    encontrouPDF = arquivosCTeEncontrados.FirstOrDefault(x => x.Contains("pdf")) == null ? "não" : "sim";
+                    encontrouXML = arquivosCTeEncontrados.FirstOrDefault(x => x.Contains("xml")) == null ? "não" : "sim";
+
+                    if (encontrouXML == "sim" && encontrouPDF == "sim")
+                    {
+                        sb.AppendLine(string.Format(linhaFormato, chaveUnica, encontrouXML, encontrouPDF, tipo));
+                        return;
+                    }
+
+                    var arquivosCTeFaturaEncontrados = arquivosCTEFatura.Where(x => x.Contains(chaveUnica));
+                    if (arquivosCTeFaturaEncontrados != null && arquivosCTeFaturaEncontrados.Count() > 0)
+                    {
+                        tipo = "CTeFatura";
+                    }
+                    encontrouPDF = arquivosCTeFaturaEncontrados.FirstOrDefault(x => x.Contains("pdf")) == null ? "não" : "sim";
+                    encontrouXML = arquivosCTeFaturaEncontrados.FirstOrDefault(x => x.Contains("xml")) == null ? "não" : "sim";
+
+                    sb.AppendLine(string.Format(linhaFormato, chaveUnica, encontrouXML, encontrouPDF, tipo));
+
+                });
+
+                System.DateTime horarioTermino = DateTime.Now;
+
+                System.TimeSpan tempoTotal = horarioTermino.Subtract(horario);
+                
+                
+                sbTime.AppendLine("Início " + horario.ToString("hh:mm:ss") +
+                          " \n" + "Término " + horarioTermino.ToString("hh:mm:ss") +
+                          " \n" + "Tempo Total: " + tempoTotal);
+                
+                //foreach (var chaveUnica in arquivoChaveUnica.Skip(1)) // descarta a primeira linha 
+                //{
+                //    // Console.WriteLine(chaveUnica);
+
+                //    var encontrouPDF = "não";
+                //    var encontrouXML = "não";
+                //    var tipo = "?";
+
+                //    var arquivosNFeEncontrados = arquivosNFE.Where(x => x.Contains(chaveUnica));
+                //    if (arquivosNFeEncontrados != null && arquivosNFeEncontrados.Count() > 0)
+                //    {
+                //        tipo = "NFe";
+                //    }
+                //    encontrouPDF = arquivosNFeEncontrados.FirstOrDefault(x => x.Contains("pdf")) == null ? "não" : "sim";
+                //    encontrouXML = arquivosNFeEncontrados.FirstOrDefault(x => x.Contains("xml")) == null ? "não" : "sim";
+
+                //    if (encontrouXML == "sim" && encontrouPDF == "sim")
+                //    {
+                //        sb.AppendLine(string.Format(linhaFormato, chaveUnica, encontrouXML, encontrouPDF, tipo));
+                //        continue;
+                //    }
+
+                //    var arquivosCTeEncontrados = arquivosCTE.Where(x => x.Contains(chaveUnica));
+                //    if (arquivosCTeEncontrados != null && arquivosCTeEncontrados.Count() > 0)
+                //    {
+                //        tipo = "CTe";
+                //    }
+                //    encontrouPDF = arquivosCTeEncontrados.FirstOrDefault(x => x.Contains("pdf")) == null ? "não" : "sim";
+                //    encontrouXML = arquivosCTeEncontrados.FirstOrDefault(x => x.Contains("xml")) == null ? "não" : "sim";
+
+                //    if (encontrouXML == "sim" && encontrouPDF == "sim")
+                //    {
+                //        sb.AppendLine(string.Format(linhaFormato, chaveUnica, encontrouXML, encontrouPDF, tipo));
+                //        continue;
+                //    }
+
+                //    var arquivosCTeFaturaEncontrados = arquivosCTEFatura.Where(x => x.Contains(chaveUnica));
+                //    if (arquivosCTeFaturaEncontrados != null && arquivosCTeFaturaEncontrados.Count() > 0)
+                //    {
+                //        tipo = "CTeFatura";
+                //    }
+                //    encontrouPDF = arquivosCTeFaturaEncontrados.FirstOrDefault(x => x.Contains("pdf")) == null ? "não" : "sim";
+                //    encontrouXML = arquivosCTeFaturaEncontrados.FirstOrDefault(x => x.Contains("xml")) == null ? "não" : "sim";
+
+                //    sb.AppendLine(string.Format(linhaFormato, chaveUnica, encontrouXML, encontrouPDF, tipo));
+                //}
+
+                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resultado.csv"), sb.ToString(), Encoding.UTF8);
+                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Tempo de Execução.txt"), sbTime.ToString(), Encoding.UTF8);
+            }
+            catch (Exception ex)
+            {
+                File.WriteAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Erro.txt"), "Erro ao gerar comparação\r\n\r\nDetalhes:\r\n\r\n" + ex.ToString());
+            }
+        }
+    }
+}

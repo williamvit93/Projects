@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+
+    <h:head>
+        <link rel="stylesheet" href="Resources/css/adoteumpet.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.css"/>
+        <link rel="stylesheet" href="Resources/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="Resources/css/main.css"/>
+        <title>ADOTE UM PET</title>
+    </h:head>
+    <h:body styleClass="body">
+
+
+        <p:layout fullPage="true">
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/menusuperior.xhtml" />
+                       
+                    </ui:insert>
+                </div>
+            </div>
+
+
+
+            <p:layoutUnit position="center">
+                <h:form>
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:panel id="quemsomos" header="QUEM SOMOS" style="margin-bottom:20px" >
+                        <h:panelGrid columns="2" cellpadding="10" >
+                            <p:graphicImage url="Resources/imagens/osso.png" height="40%" />
+
+                            <p class="text-img ">A <b>"ADOTE UM PET"</b> é uma ONG (Organização Não Governamental), 
+                                sem fins lucrativos, e que nasceu de um grande sonho do seu
+                                atual presidente: tirar o maior número possível de animais das ruas,
+                                dar tratamento adequado e integrá-los a famílias que lhes deem amor,
+                                carinho e uma vida digna. Atualmente a ONG mantem abrigos com mais de
+                                500 animais que são constantemente tratados por veterinários, alimentados 
+                                com ração de boa qualidade, bebem água potável, dormem em abrigos especialmente
+                                construídos e são tratados com muito amor e carinho por todos os funcionários e 
+                                voluntários que estão sempre visitando as instalações onde ficam os cães.
+                            </p>
+                        </h:panelGrid>
+                    </p:panel>
+
+                    <p:panel id="nossotime" header="NOSSO TIME" style="margin-bottom:20px">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage url="Resources/imagens/pet-care-icon.png" height="60%"  />
+                            <p class="text-img">A Diretoria é formada por empresários, procurador federal
+                                , funcionários de grandes empresas e profissionais liberais,
+                                todos simpatizantes dos animais. Apesar de também contribuírem
+                                com as muitas despesas da ONG (atualmente mais de 30 mil reais
+                                mensais) nunca é o suficiente, motivo pelo qual estão sempre precisando
+                                da ajuda dos amigos e simpatizantes para dar prosseguimento ao trabalho
+                                de resgates, tratamento e adoção de animais.</p>
+                        </h:panelGrid>
+                    </p:panel>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" size="20%">
+                <p:graphicImage url="Resources/imagens/adoteesq.jpg" height="99%"  />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="east" size="20%">
+                <p:graphicImage url="Resources/imagens/adote.jpg" height="99%"  />
+            </p:layoutUnit>
+
+
+            <div id="page">
+
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/template/rodape.xhtml" />
+                    </ui:insert>
+                </div>
+            </div>
+
+        </p:layout>
+
+    </h:body>
+</html>
+
